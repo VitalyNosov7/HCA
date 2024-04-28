@@ -10,7 +10,7 @@
         public String? NameService { get; set; }
 
         /// <summary>Расценки сервиса отеля</summary>
-        public HotelServicePrice[]? HotelServicePrices { get; set; }
+        public List<HotelServicePrice>? HotelServicePrices { get; set; }
 
         /// <summary>Ссылка на идентификатор отеля</summary>
         public Int32 IdHotel { get; set; }

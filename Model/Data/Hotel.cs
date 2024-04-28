@@ -10,7 +10,7 @@
         public String? NameHotel { get; set; }
 
         /// <summary>Сервисы отеля</summary>
-        public HotelService[]? HotelServices { get; set; }
+        public List<HotelService>? HotelServices { get; set; }
 
         public Hotel() { }
     }
