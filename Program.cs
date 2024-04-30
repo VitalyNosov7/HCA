@@ -1,5 +1,4 @@
 ﻿using HotelCalcApp.Model.Data;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace HotelCalcApp
 {
@@ -19,13 +18,13 @@ namespace HotelCalcApp
                 Console.WriteLine($"Отель # {hotel.Id} : {hotel.NameHotel}");
             }
 
-            Console.WriteLine("Сервисы отелей:");
+            Console.WriteLine("\nСервисы отелей:");
             foreach (var servicePlaneta in hotelServiceListPlaneta)
             {
                 Console.WriteLine($"Сервис отеля Планета № {servicePlaneta.Id} : {servicePlaneta.NameService}");
             }
 
-            Console.WriteLine("Цены сервисов отелей:");
+            Console.WriteLine("\nЦены сервисов отелей:");
             foreach (var hotelServicePricePlaneta in hotelServicePricesListPlaneta)
             {
                 Console.WriteLine($"Цены сервисов отеля Планета : " +
@@ -33,7 +32,7 @@ namespace HotelCalcApp
                     $"[{hotelServiceListPlaneta.Find(item => item.Id == hotelServicePricePlaneta.IdHotelService)}]\t" +
                     $"цена : {hotelServicePricePlaneta.PriceService}");
             }
-            Console.WriteLine("Бонусы отелей:");
+            Console.WriteLine("\nБонусы отелей:");
             foreach (var guestBonusPlaneta in guestBonusListPlaneta)
             {
                 Console.WriteLine($"Бонус отеля Планета : " +
