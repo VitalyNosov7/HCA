@@ -110,7 +110,7 @@
 
         #region СПИСОК СТОПОВ ПРОДАЖ ОТЕЛЯ ПЛАНЕТА
 
-        List<ServiceSalesStop> serviceSalesStopListPlaneta = new List<ServiceSalesStop>()
+        public List<ServiceSalesStop> serviceSalesStopListPlaneta = new List<ServiceSalesStop>()
         {
             new ServiceSalesStop()
             {
@@ -125,7 +125,7 @@
 
         #region СПИСОК БОНУСОВ ГОСТЯ ОТЕЛЯ ПЛАНЕТА
 
-        List<GuestBonus> GuestBonusListPlaneta = new List<GuestBonus>
+        public List<GuestBonus> guestBonusListPlaneta = new List<GuestBonus>
         {
             new GuestBonus()
             {
