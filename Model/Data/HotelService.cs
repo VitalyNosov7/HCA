@@ -16,5 +16,10 @@
         public Int32 IdHotel { get; set; }
 
         public HotelService() { }
+
+        public override string ToString()
+        {
+            return NameService ?? String.Empty;
+        }
     }
 }

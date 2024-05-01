@@ -13,5 +13,10 @@
         public List<HotelService>? HotelServices { get; set; }
 
         public Hotel() { }
+
+        public override string ToString()
+        {
+            return NameHotel ?? String.Empty;
+        }
     }
 }
