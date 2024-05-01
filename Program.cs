@@ -1,4 +1,5 @@
 ﻿using HotelCalcApp.Model.Data;
+using System.IO;
 
 namespace HotelCalcApp
 {
@@ -28,9 +29,10 @@ namespace HotelCalcApp
             {
                 Console.WriteLine($"Цены сервисов отеля Планета № : " +
                                   $"сервис - {hotelServicePricePlaneta.IdHotelService}, " +
-                                  $"цена : {from p in hotelServiceListPlaneta
-                                            where p.Id == hotelServicePricePlaneta.IdHotelService
-                                            select p.NameService}");
+                                   $"назв серв. : {-1}");
+                //$"назв серв. : {from p in hotelServiceListPlaneta
+                //                            where p.Id == hotelServicePricePlaneta.IdHotelService
+                //                            select p.NameService}");
             }
         }
     }
