@@ -1,6 +1,6 @@
 ﻿namespace HotelCalcApp.Model.Data
 {
-    internal class DataInitialization
+    public class DataInitialization
     {
 
         #region СПИСОК ОТЕЛЕЙ
@@ -8,28 +8,17 @@
         //  Экземпляры отелей:
         public List<Hotel> hotelsList = new List<Hotel>()
             {
-                new Hotel() { Id = 1, NameHotel = "Планета" },
-                new Hotel() { Id = 2, NameHotel = "Рябинка" }
+                new Hotel("Планета", hotelServicesListPlaneta) { Id = 1},
+                new Hotel("Рябинка", hotelServicesListRiabinka) { Id = 2}
             };
         #endregion
 
-        #region СПИСОК СЕРВИСОВ ОТЕЛЯ ПЛАНЕТА
 
-        //  Экземпляры сервисов отелей:
-        //  Экземпляры сервисов отеля Планета:
-        public List<HotelService> hotelServicesListPlaneta = new List<HotelService>()
-            {
-                new HotelService() { Id = 1, NameService = "Стандарт 1 мест." },
-                new HotelService() { Id = 2, NameService = "Стандарт 2 мест." },
-                new HotelService() { Id = 3, NameService = "Стандарт доп." },
-                new HotelService() { Id = 4, NameService = "Стандарт детский." }
-            };
-        #endregion
 
         #region СПИСОК ЦЕН ОТЕЛЯ ПЛАНЕТА
 
         //  Экземпляры цен на сервисы отеля Планета:
-        public List<HotelServicePrice> hotelServicePricesListPlaneta = new List<HotelServicePrice>()
+        public static List<HotelServicePrice> hotelServicePricesListPlaneta = new List<HotelServicePrice>()
             {
                 new HotelServicePrice()
                 {
@@ -108,15 +97,119 @@
 
         #endregion
 
+        #region СПИСОК ЦЕН ОТЕЛЯ ПЛАНЕТА
+
+        //  Экземпляры цен на сервисы отеля Планета:
+        public static List<HotelServicePrice> hotelServicePricesListRiabinka = new List<HotelServicePrice>()
+            {
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
+                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
+                    PriceService = 6000,
+                    IdHotelService = 1
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
+                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
+                    PriceService = 10500,
+                    IdHotelService = 2
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
+                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
+                    PriceService = 5900,
+                    IdHotelService = 3
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
+                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
+                    PriceService = 3500,
+                    IdHotelService = 4
+                },
+                //===========================================================
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
+                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
+                    PriceService = 8000,
+                    IdHotelService = 1
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
+                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
+                    PriceService = 14500,
+                    IdHotelService = 2
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
+                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
+                    PriceService = 7900,
+                    IdHotelService = 3
+                },
+                new HotelServicePrice()
+                {
+                    Id = Guid.NewGuid(),
+                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
+                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
+                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
+                    PriceService = 6500,
+                    IdHotelService = 4
+                }
+            };
+
+        #endregion
+
+        #region СПИСОК СЕРВИСОВ ОТЕЛЯ ПЛАНЕТА
+
+        //  Экземпляры сервисов отеля Планета:
+        public static List<HotelService> hotelServicesListPlaneta = new List<HotelService>()
+            {
+                new HotelService("Стандарт 1 мест.", hotelServicePricesListPlaneta) { Id = 1},
+                new HotelService("Стандарт 2 мест.", hotelServicePricesListPlaneta) { Id = 2},
+                new HotelService("Стандарт доп.", hotelServicePricesListPlaneta ) { Id = 3},
+                new HotelService("Стандарт детский.", hotelServicePricesListPlaneta) { Id = 4}
+            };
+        #endregion
+
+        #region СПИСОК СЕРВИСОВ ОТЕЛЯ РЯБИНКА
+
+        //  Экземпляры сервисов отеля Рябинка:
+        public static List<HotelService> hotelServicesListRiabinka = new List<HotelService>()
+            {
+                new HotelService("Улучшенный 1 мест.", hotelServicePricesListRiabinka) { Id = 1},
+                new HotelService("Улучшенный 2 мест.", hotelServicePricesListRiabinka) { Id = 2},
+                new HotelService("Улучшенный доп.", hotelServicePricesListRiabinka ) { Id = 3},
+                new HotelService("Улучшенный детский.", hotelServicePricesListRiabinka) { Id = 4}
+            };
+        #endregion
+
         #region СПИСОК СТОПОВ ПРОДАЖ ОТЕЛЯ ПЛАНЕТА
 
         public List<ServiceSalesStop> serviceSalesStopListPlaneta = new List<ServiceSalesStop>()
         {
-            new ServiceSalesStop()
+            new ServiceSalesStop(Convert.ToDateTime("10.04.2024"), Convert.ToDateTime("15.04.2024"))
             {
                 Id = Guid.NewGuid(),
-                DateStartServiceSalesStop = Convert.ToDateTime("10.04.2024"),
-                DateEndServiceSalesStop = Convert.ToDateTime("15.04.2024"),
                 IdHotelService = 1
             }
         };

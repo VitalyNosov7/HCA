@@ -9,8 +9,8 @@ namespace HotelCalcApp
         {
             DataInitialization dataInitialization = new DataInitialization();
             var hotelsList = dataInitialization.hotelsList;
-            var hotelServiceListPlaneta = dataInitialization.hotelServicesListPlaneta;
-            var hotelServicePricesListPlaneta = dataInitialization.hotelServicePricesListPlaneta;
+            var hotelServiceListPlaneta = DataInitialization.hotelServicesListPlaneta;
+            var hotelServicePricesListPlaneta = DataInitialization.hotelServicePricesListPlaneta;
             var guestBonusListPlaneta = dataInitialization.guestBonusListPlaneta;
 
             Console.WriteLine("Названия отелей:");
@@ -22,7 +22,7 @@ namespace HotelCalcApp
             Console.WriteLine("\nСервисы отелей:");
             foreach (var servicePlaneta in hotelServiceListPlaneta)
             {
-                Console.WriteLine($"Сервис отеля Планета № {servicePlaneta.Id} : {servicePlaneta.NameService}");
+                Console.WriteLine($"Сервис отеля Планета № {servicePlaneta.Id} : {servicePlaneta.HotelServiceName}");
             }
 
             Console.WriteLine("\nЦены сервисов отелей:");

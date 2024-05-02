@@ -3,7 +3,7 @@
 namespace HotelCalcApp.Model.Data
 {
     /// <summary>Цены Отеля</summary>
-    internal class HotelServicePrice
+    public class HotelServicePrice
     {
         /// <summary>Идентификатор цены отеля</summary>
         public Guid Id { get; set; }
