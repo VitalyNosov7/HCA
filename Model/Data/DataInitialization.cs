@@ -189,9 +189,11 @@
 
         #region СПИСОК СТОПОВ ПРОДАЖ ОТЕЛЯ ПЛАНЕТА
 
-        public List<ServiceSalesStop> serviceSalesStopListPlaneta = new List<ServiceSalesStop>()
+        public List<ServiceSaleStop> serviceSalesStopListPlaneta = new List<ServiceSaleStop>()
         {
-            new ServiceSalesStop(Convert.ToDateTime("10.04.2024"), Convert.ToDateTime("15.04.2024"))
+            new ServiceSaleStop(Convert.ToDateTime("01.04.2024"),
+                Convert.ToDateTime("10.04.2024"),
+                Convert.ToDateTime("15.04.2024"))
             {
                 Id = Guid.NewGuid(),
                 IdHotelService = 1
