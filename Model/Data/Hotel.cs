@@ -6,7 +6,7 @@
         /// <summary>Идентификатор отеля</summary>
         public Int32 Id { get; set; }
 
-        private String _NameHotel;
+        private String _NameHotel = String.Empty;
         private List<HotelService> _HotelServices;
 
         /// <summary>Название отеля</summary>

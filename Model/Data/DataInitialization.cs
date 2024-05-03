@@ -20,77 +20,69 @@
         //  Экземпляры цен на сервисы отеля Планета:
         public static List<HotelServicePrice> hotelServicePricesListPlaneta = new List<HotelServicePrice>()
             {
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      5500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 5500,
                     IdHotelService = 1
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      10000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 10000,
                     IdHotelService = 2
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      5400)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 5400,
                     IdHotelService = 3
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      3000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 3000,
                     IdHotelService = 4
                 },
                 //===========================================================
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      7500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 7500,
                     IdHotelService = 1
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      14000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 14000,
                     IdHotelService = 2
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      7400)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 7400,
                     IdHotelService = 3
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      6000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 6000,
                     IdHotelService = 4
                 }
             };
@@ -102,77 +94,69 @@
         //  Экземпляры цен на сервисы отеля Планета:
         public static List<HotelServicePrice> hotelServicePricesListRiabinka = new List<HotelServicePrice>()
             {
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      6000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 6000,
                     IdHotelService = 1
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      10500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 10500,
                     IdHotelService = 2
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      5900)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 5900,
                     IdHotelService = 3
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.05.2024"),
+                                      Convert.ToDateTime("31.05.2024"),
+                                      3500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.05.2024"),
-                    DateEndPrice = Convert.ToDateTime("31.05.2024"),
-                    PriceService = 3500,
                     IdHotelService = 4
                 },
                 //===========================================================
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      8000)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 8000,
                     IdHotelService = 1
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      14500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 14500,
                     IdHotelService = 2
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      7900)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 7900,
                     IdHotelService = 3
                 },
-                new HotelServicePrice()
+                new HotelServicePrice(Convert.ToDateTime("20.04.2024"),
+                                      Convert.ToDateTime("01.06.2024"),
+                                      Convert.ToDateTime("30.06.2024"),
+                                      6500)
                 {
                     Id = Guid.NewGuid(),
-                    DateActualPrice = Convert.ToDateTime("20.04.2024"),
-                    DateStartPrice = Convert.ToDateTime("01.06.2024"),
-                    DateEndPrice = Convert.ToDateTime("30.06.2024"),
-                    PriceService = 6500,
                     IdHotelService = 4
                 }
             };

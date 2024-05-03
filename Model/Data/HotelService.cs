@@ -3,8 +3,8 @@
     /// <summary>Сервис отеля</summary>
     public class HotelService
     {
-        private String _HotelServiceName;
-        private List<HotelServicePrice> _HotelServicePricesList;
+        private String _HotelServiceName = String.Empty;
+        private List<HotelServicePrice> _HotelServicePricesList = new List<HotelServicePrice> { };
 
         /// <summary>Идентификатор сервиса отеля</summary>
         public Int64 Id { get; set; }
