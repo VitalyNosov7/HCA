@@ -1,5 +1,6 @@
 ﻿using HotelCalcApp.Model.Data;
-using System.IO;
+using System.Collections.Generic;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace HotelCalcApp
 {
@@ -12,6 +13,7 @@ namespace HotelCalcApp
             var hotelServiceListPlaneta = DataInitialization.hotelServicesListPlaneta;
             var hotelServicePricesListPlaneta = DataInitialization.hotelServicePricesListPlaneta;
             var guestBonusListPlaneta = dataInitialization.guestBonusListPlaneta;
+            var serviceSalesStopListPlaneta = dataInitialization.serviceSalesStopListPlaneta;
 
             Console.WriteLine("Названия отелей:");
             foreach (var hotel in hotelsList)
@@ -46,6 +48,49 @@ namespace HotelCalcApp
                 Console.WriteLine($"Бонус отеля Планета : " +
                     $"Бонус отеля {hotelsList.Find(item => item.Id == guestBonusPlaneta.IdHotel)}: " +
                     $"{guestBonusPlaneta.NameGuestBonus}");
+            }
+            Console.WriteLine("\nСтоп продаж сервисов отеля Планета:");
+
+
+            //Console.WriteLine("\nНе отсортированный список:");
+            //foreach (var stopService in serviceSalesStopListPlaneta)
+            //{
+            //    Console.WriteLine($"Актуальная дата: {stopService.DateOfActualPeriodServiceSaleStop} " +
+            //        $"старт париода: {stopService.DateStartServiceSaleStop} " +
+            //        $"конец периода : {stopService.DateEndServiceSaleStop}");
+            //}
+
+            Console.WriteLine("\nОтсортированный список по убыванию(по актуальной дате):");
+
+            var sorted = serviceSalesStopListPlaneta.OrderByDescending(x => x.DateOfActualPeriodServiceSaleStop).ToList();
+
+            foreach (var stopService in sorted)
+            {
+                Console.WriteLine($"Актуальная дата: {stopService.DateOfActualPeriodServiceSaleStop} " +
+                    $"старт периода: {stopService.DateStartServiceSaleStop} " +
+                    $"конец периода : {stopService.DateEndServiceSaleStop}");
+            }
+
+            Console.WriteLine("\nАктуальный период на указанную дату:");
+           
+            DateTime currentDate = Convert.ToDateTime("09.04.2024");
+
+            Console.WriteLine($"На дату : {currentDate}");
+
+            for (int i = 0; i < sorted.Count; i++)
+            {
+                if (currentDate >= sorted[i].DateOfActualPeriodServiceSaleStop)
+                {
+                    Console.WriteLine($"Актуальная дата в списке : {sorted[i].DateOfActualPeriodServiceSaleStop}");
+                    return;
+                    //if (sorted[i + 1].DateOfActualPeriodServiceSaleStop != null)
+                    //{
+                    //    if (sorted[i].DateOfActualPeriodServiceSaleStop < sorted[i + 1].DateOfActualPeriodServiceSaleStop)
+                    //    {
+
+                    //    }
+                    //}
+                }
             }
         }
     }
