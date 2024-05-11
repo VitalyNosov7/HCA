@@ -34,11 +34,9 @@ namespace HotelCalcApp.Model.Services
             }
         }
 
-        /// <summary>
-        /// Новая проверка сервиса отеля
-        /// </summary>
+        /// <summary>Новая проверка сервиса отеля</summary>
         /// <param name="hotelServiceForVerification">Проверяемый сервис отеля</param>
-        /// <param name="currentStopSaleService">Актуальный период Стоп Продаж сервиса отеля</param>
+        /// <param name="currentStopSaleService">Текущие периоды Стоп Продаж сервиса отеля</param>
         public HotelServiceVerificationModelService(HotelService hotelServiceForVerification, ServiceSaleStop currentStopSaleService)
         {
             HotelServiceForVerification = hotelServiceForVerification;
