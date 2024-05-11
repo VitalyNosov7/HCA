@@ -1,7 +1,25 @@
-﻿namespace HotelCalcApp.Controller
+﻿using HotelCalcApp.Model.Services;
+
+namespace HotelCalcApp.Controller
 {
+    /// <summary>Контроллер сервиса для проверки  сервиса отеля</summary>
     public class HotelServiceVerificationController
     {
+        private HotelServiceVerificationModelService _CurrentVerificationOfHotelService;
+
+
+        public HotelServiceVerificationModelService CurrentVerificationOfHotelService
+        {
+            get
+            {
+                return _CurrentVerificationOfHotelService;
+            }
+            set
+            {
+                _CurrentVerificationOfHotelService = value;
+            }
+        }
+
         /// <summary>Попадает ли период сервиса отеля в статус - Стоп Продаж</summary>
         public Boolean StopSalesOfHotelService()
         {
