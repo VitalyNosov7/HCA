@@ -5,6 +5,7 @@ namespace HotelCalcApp.Model.Services
     /// <summary>Сервис для проверки  сервиса отеля</summary>
     public class HotelServiceVerificationModelService
     {
+        private Hotel _Hotel;
         private HotelService _HotelServiceForVerification;
         private ServiceSaleStop _CurrentStopSaleService;
 
