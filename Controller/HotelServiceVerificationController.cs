@@ -3,49 +3,11 @@ using HotelCalcApp.Model.Services;
 
 namespace HotelCalcApp.Controller
 {
-    // TODO: Подумать о переносе элементов этого класса в модель  HotelServiceVerificationModelService
-
     /// <summary>Контроллер Сервиса для проверки  сервиса отеля</summary>
     public class HotelServiceVerificationController
     {
-        // Эти данные, по идее, получаем из объекта _HotelServiceVerificationService
-        ///// <summary>Актуальная дата периода стоп продаж сервиса</summary>
-        //private DateTime _DateOfActualPeriodServiceSaleStop;
-
-        // Эти данные, по идее, получаем из объекта _HotelServiceVerificationService
-        ///// <summary>Текущий Стоп продаж сервиса</summary>
-        //private ServiceSaleStop _CurrentTheServiceSaleStop;
-
         /// <summary>Экземпляр Сервиса для проверки  сервиса отеля</summary>
         private HotelServiceVerificationModelService _HotelServiceVerificationService;
-
-        // Эти данные, по идее, получаем из объекта _HotelServiceVerificationService
-        ///// <summary>Актуальная дата периода стоп продаж сервиса</summary>
-        //public DateTime DateOfActualPeriodServiceSaleStop
-        //{
-        //    get
-        //    {
-        //        return _DateOfActualPeriodServiceSaleStop;
-        //    }
-        //    set
-        //    {
-        //        _DateOfActualPeriodServiceSaleStop = value;
-        //    }
-        //}
-
-        // Эти данные, по идее, получаем из объекта _HotelServiceVerificationService
-        ///// <summary>Текущий Стоп продаж сервиса</summary>
-        //public ServiceSaleStop CurrentTheServiceSaleStop
-        //{
-        //    get
-        //    {
-        //        return _CurrentTheServiceSaleStop;
-        //    }
-        //    set
-        //    {
-        //        _CurrentTheServiceSaleStop = value;
-        //    }
-        //}
 
         /// <summary>Экземпляр Сервиса для проверки  сервиса отеля</summary>
         public HotelServiceVerificationModelService HotelServiceVerificationService
