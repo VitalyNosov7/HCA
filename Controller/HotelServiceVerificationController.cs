@@ -7,7 +7,7 @@ namespace HotelCalcApp.Controller
     {
 
         private Hotel _CurrentHotel;
-        private HotelService _HotelServiceForVerification;
+        private HotelService _CurrentHotelService;
         private ServiceSaleStop _CurrentStopSaleService;
 
         public Hotel CurrentHotel
@@ -23,15 +23,15 @@ namespace HotelCalcApp.Controller
         }
 
         /// <summary>Проверяемый сервис отеля</summary>
-        public HotelService HotelServiceForVerification
+        public HotelService CurrentHotelService
         {
             get
             {
-                return _HotelServiceForVerification;
+                return _CurrentHotelService;
             }
             set
             {
-                _HotelServiceForVerification = value;
+                _CurrentHotelService = value;
             }
         }
 
