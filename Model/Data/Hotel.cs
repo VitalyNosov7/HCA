@@ -35,6 +35,11 @@
             }
         }
 
+        public Hotel()
+        {
+            
+        }
+
         /// <summary>
         /// Новый отель
         /// </summary>

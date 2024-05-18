@@ -1,7 +1,5 @@
 ﻿using HotelCalcApp.Controller;
 using HotelCalcApp.Model.Data;
-using System.Collections.Generic;
-using static System.Reflection.Metadata.BlobBuilder;
 
 namespace HotelCalcApp
 {
@@ -54,6 +52,13 @@ namespace HotelCalcApp
 
             HotelServiceVerificationController hotelServiceVerificationController = new HotelServiceVerificationController();
             hotelServiceVerificationController.ReturnDateOfActualPeriodServiceSaleStop(Convert.ToDateTime("11.04.2024"), serviceSalesStopListPlaneta);
+
+            Console.WriteLine("Добавить отель:");
+            String nameHotel = Console.ReadLine();
+            DataBaseController dataBaseController = new DataBaseController();
+            dataBaseController.AddHotel(nameHotel);
+
+            dataBaseController.GetHotel();
 
 
             //Console.WriteLine("\nНе отсортированный список:");

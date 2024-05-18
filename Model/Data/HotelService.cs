@@ -38,6 +38,11 @@
         /// <summary>Ссылка на идентификатор отеля</summary>
         public Int32 IdHotel { get; set; }
 
+        public HotelService()
+        {
+            
+        }
+
         /// <summary>
         /// Новый сервис отеля
         /// </summary>
