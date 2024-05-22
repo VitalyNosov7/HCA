@@ -28,6 +28,7 @@ namespace HotelCalcApp.Controller
             set { _HotelServiceVerificationController = value; }
         }
 
+        /// <summary>Основное Отображение</summary>
         private MainView _MainView = new MainView();
         public MainView MainView
         {
@@ -42,7 +43,7 @@ namespace HotelCalcApp.Controller
             set { _Message = value; }
         }
 
-        /// <summary>Главный поток отображения</summary>
+        /// <summary>Поток главноего(меню) отображения</summary>
         public void MainViewStream()
         {
             ConsoleKeyInfo btn;
@@ -58,6 +59,7 @@ namespace HotelCalcApp.Controller
                     case (ConsoleKey.D1):
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера БД");
+                        DataBaseController.DataBaseViewStream();
                         return;
                     case (ConsoleKey.D2):
                         // TODO: тут добавить вызов соответствующего контроллера.
