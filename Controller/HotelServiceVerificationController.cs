@@ -73,12 +73,26 @@ namespace HotelCalcApp.Controller
         public DateTime ReturnDateOfActualPeriodServiceSaleStop(DateTime currentDate, List<ServiceSaleStop> salesStopDataSource)
         {
             DateTime searchedActualDate = new DateTime();
-            
             //  1.  Поиск актуального периода:
             //      1.1.    Актуальный период должен быть меньше или равен currentDate
             //              и должен быть больше остальных из уже имеющихся!
+            var sorted = salesStopDataSource.OrderByDescending(x => x.DateOfActualPeriodServiceSaleStop).ToList();
 
+            Console.WriteLine("\nАктуальный период на указанную дату:");
 
+            Console.WriteLine($"На дату : {currentDate}");
+
+            for (int i = 0; i < sorted.Count; i++)
+            {
+                if (currentDate >= sorted[i].DateOfActualPeriodServiceSaleStop)
+                {
+                   // Console.WriteLine($"Актуальная дата в списке : {sorted[i].DateOfActualPeriodServiceSaleStop}");
+                    searchedActualDate = sorted[i].DateOfActualPeriodServiceSaleStop;
+                    break;
+                }
+            }
+
+            Console.WriteLine($"Актуальная дата в списке : {searchedActualDate}");
             return searchedActualDate;
         }
 

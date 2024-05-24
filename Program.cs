@@ -1,4 +1,5 @@
-﻿using HotelCalcApp.Model.Data;
+﻿using HotelCalcApp.Controller;
+using HotelCalcApp.Model.Data;
 using System.Collections.Generic;
 using static System.Reflection.Metadata.BlobBuilder;
 
@@ -71,27 +72,30 @@ namespace HotelCalcApp
                     $"конец периода : {stopService.DateEndServiceSaleStop}");
             }
 
-            Console.WriteLine("\nАктуальный период на указанную дату:");
+            //Console.WriteLine("\nАктуальный период на указанную дату:");
            
-            DateTime currentDate = Convert.ToDateTime("09.04.2024");
+            //DateTime currentDate = Convert.ToDateTime("09.04.2024");
 
-            Console.WriteLine($"На дату : {currentDate}");
+            //Console.WriteLine($"На дату : {currentDate}");
 
-            for (int i = 0; i < sorted.Count; i++)
-            {
-                if (currentDate >= sorted[i].DateOfActualPeriodServiceSaleStop)
-                {
-                    Console.WriteLine($"Актуальная дата в списке : {sorted[i].DateOfActualPeriodServiceSaleStop}");
-                    return;
-                    //if (sorted[i + 1].DateOfActualPeriodServiceSaleStop != null)
-                    //{
-                    //    if (sorted[i].DateOfActualPeriodServiceSaleStop < sorted[i + 1].DateOfActualPeriodServiceSaleStop)
-                    //    {
+            //for (int i = 0; i < sorted.Count; i++)
+            //{
+            //    if (currentDate >= sorted[i].DateOfActualPeriodServiceSaleStop)
+            //    {
+            //        Console.WriteLine($"Актуальная дата в списке : {sorted[i].DateOfActualPeriodServiceSaleStop}");
+            //        return;
+            //        //if (sorted[i + 1].DateOfActualPeriodServiceSaleStop != null)
+            //        //{
+            //        //    if (sorted[i].DateOfActualPeriodServiceSaleStop < sorted[i + 1].DateOfActualPeriodServiceSaleStop)
+            //        //    {
 
-                    //    }
-                    //}
-                }
-            }
+            //        //    }
+            //        //}
+            //    }
+            //}
+
+            HotelServiceVerificationController HotelSVContr = new HotelServiceVerificationController();
+           HotelSVContr.ReturnDateOfActualPeriodServiceSaleStop(DateTime.Now, serviceSalesStopListPlaneta);
         }
     }
 }
