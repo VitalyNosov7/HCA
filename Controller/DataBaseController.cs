@@ -7,6 +7,9 @@ namespace HotelCalcApp.Controller
     /// <summary>Контроллер взаимодействия с Базой данных(CRUD)</summary>
     public class DataBaseController
     {
+        /// <summary>Контекст базы данных</summary>
+        HotelCalcAppDBContext db = new HotelCalcAppDBContext();
+
         /// <summary>Основное Меню для работы с Базой Данных</summary>
         private const String DATABASE_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
           "(нажмите соответствующую цифру для перехода)\n" +
@@ -31,21 +34,31 @@ namespace HotelCalcApp.Controller
             set { _DataBaseView = value; }
         }
 
-        /// <summary>Контекст базы данных</summary>
-        HotelCalcAppDBContext db = new HotelCalcAppDBContext();
-
-        /// <summary>
-        /// Добавить отель.
-        /// </summary>
-        /// <param name="nameHotel">Название отеля</param>
-        public void AddHotel(String nameHotel)
+        /// <summary>Добавление данных в базу данных</summary>
+        private AddDataToDBController _AddDataToDBController = new AddDataToDBController();
+        public AddDataToDBController AddDataToDBController
         {
-            // Добавление
-
-            Hotel newHotel = new Hotel { NameHotel = nameHotel };
-            db.Hotels.Add(newHotel);
-            db.SaveChanges();
+            get { return _AddDataToDBController; }
+            set { _AddDataToDBController= value; }
         }
+
+
+
+        // ======================================
+        // Перенесен в AddDataToDBController
+        ///// <summary>
+        ///// Добавить отель.
+        ///// </summary>
+        ///// <param name="nameHotel">Название отеля</param>
+        //public void AddHotel(String nameHotel)
+        //{
+        //    // Добавление
+
+        //    Hotel newHotel = new Hotel { NameHotel = nameHotel };
+        //    db.Hotels.Add(newHotel);
+        //    db.SaveChanges();
+        //}
+        // ======================================
 
         //  TODO:   Перенести в соответствующее меню.
         public void GetHotel()
@@ -76,6 +89,7 @@ namespace HotelCalcApp.Controller
                     case (ConsoleKey.D1):
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
+                        AddDataToDBController.AddDataToDBViewStream();
                         return;
                     case (ConsoleKey.D2):
                         // TODO: тут добавить вызов соответствующего контроллера.
@@ -86,7 +100,6 @@ namespace HotelCalcApp.Controller
                         Console.WriteLine(".    Вызов контроллера УДАЛИТЬ ДАННЫЕ");
                         return;
                 }
-
             }
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
