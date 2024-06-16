@@ -1,4 +1,4 @@
-﻿using HotelCalcApp.Controller;
+﻿using HotelCalcApp.Controller.Menu;
 using HotelCalcApp.Model.Data;
 
 namespace HotelCalcApp
@@ -7,7 +7,7 @@ namespace HotelCalcApp
     {
         static void Main()
         {
-            MainController mainController = new MainController();
+            MainMenuController mainController = new MainMenuController();
             mainController.StartApp();
             mainController.MainViewStream();
           //  mainController.StopApp();

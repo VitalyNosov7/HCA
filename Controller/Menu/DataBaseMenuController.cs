@@ -1,22 +1,15 @@
 ﻿using HotelCalcApp.Model.Data;
-using HotelCalcApp.View;
+using HotelCalcApp.Model.Menu;
+using HotelCalcApp.View.Menu;
 using System.Text;
 
-namespace HotelCalcApp.Controller
+namespace HotelCalcApp.Controller.Menu
 {
     /// <summary>Контроллер взаимодействия с Базой данных(CRUD)</summary>
-    public class DataBaseController
+    public class DataBaseMenuController
     {
         /// <summary>Контекст базы данных</summary>
         HotelCalcAppDBContext db = new HotelCalcAppDBContext();
-
-        /// <summary>Основное Меню для работы с Базой Данных</summary>
-        private const String DATABASE_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
-          "(нажмите соответствующую цифру для перехода)\n" +
-          "1.     ДОБАВИТЬ ДАННЫЕ\n" +
-          "2.     РЕДАКТИРОВАТЬ ДАННЫЕ\n" +
-          "3.     УДАЛИТЬ ДАННЫЕ\n" +
-          "ESC.   ВЫХОД В ГЛАВНОЕ МЕНЮ ПРОГРАММЫ";
 
         /// <summary>Сообщение</summary>
         private StringBuilder _Message = new StringBuilder();
@@ -27,38 +20,21 @@ namespace HotelCalcApp.Controller
         }
 
         /// <summary>Отображение работы с базой данных</summary>
-        private DataBaseView _DataBaseView = new DataBaseView();
-        public DataBaseView DataBaseView
+        private DataBaseMenuView _DataBaseView = new DataBaseMenuView();
+        public DataBaseMenuView DataBaseView
         {
             get { return _DataBaseView; }
             set { _DataBaseView = value; }
         }
 
         /// <summary>Добавление данных в базу данных</summary>
-        private AddDataToDBController _AddDataToDBController = new AddDataToDBController();
-        public AddDataToDBController AddDataToDBController
+        private AddDataToDBMenuController _AddDataToDBController = new AddDataToDBMenuController();
+        public AddDataToDBMenuController AddDataToDBController
         {
             get { return _AddDataToDBController; }
-            set { _AddDataToDBController= value; }
+            set { _AddDataToDBController = value; }
         }
 
-
-
-        // ======================================
-        // Перенесен в AddDataToDBController
-        ///// <summary>
-        ///// Добавить отель.
-        ///// </summary>
-        ///// <param name="nameHotel">Название отеля</param>
-        //public void AddHotel(String nameHotel)
-        //{
-        //    // Добавление
-
-        //    Hotel newHotel = new Hotel { NameHotel = nameHotel };
-        //    db.Hotels.Add(newHotel);
-        //    db.SaveChanges();
-        //}
-        // ======================================
 
         //  TODO:   Перенести в соответствующее меню.
         public void GetHotel()
@@ -80,22 +56,22 @@ namespace HotelCalcApp.Controller
             do
             {
                 Console.Clear();
-                DataBaseView.MessageOutput(_Message.Insert(0, DATABASE_VIEW_MENU));
+                DataBaseView.MessageOutput(_Message.Insert(0, DataBaseMenuModel.DATABASE_VIEW_MENU));
                 _Message.Clear();
                 btn = Console.ReadKey();
 
                 switch (btn.Key)
                 {
-                    case (ConsoleKey.D1):
+                    case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
                         AddDataToDBController.AddDataToDBViewStream();
                         return;
-                    case (ConsoleKey.D2):
+                    case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера РЕДАКТИРОВАТЬ ДАННЫЕ");
                         return;
-                    case (ConsoleKey.D3):
+                    case ConsoleKey.D3:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера УДАЛИТЬ ДАННЫЕ");
                         return;
@@ -109,7 +85,7 @@ namespace HotelCalcApp.Controller
         /// <summary>Переход в Поток главноего(меню) отображения</summary>
         public void GoToMainMenu()
         {
-            MainController mainController = new MainController();
+            MainMenuController mainController = new MainMenuController();
             mainController.MainViewStream();
         }
     }

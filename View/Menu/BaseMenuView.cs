@@ -1,8 +1,8 @@
 ﻿using System.Text;
 
-namespace HotelCalcApp.View
+namespace HotelCalcApp.View.Menu
 {
-    public abstract class BaseView
+    public abstract class BaseMenuView
     {
         private StringBuilder _Message = new StringBuilder();
 
