@@ -1,11 +1,10 @@
 ﻿using HotelCalcApp.Model.Menu;
 using HotelCalcApp.View.Menu;
-using System.Text;
 
 namespace HotelCalcApp.Controller.Menu
 {
     /// <summary>Главный контроллер</summary>
-    public class MainMenuController
+    public class MainMenuController : BaseMenuController
     {
 
         private MainMenuModel _MainMenuModel = new MainMenuModel();
@@ -15,11 +14,11 @@ namespace HotelCalcApp.Controller.Menu
             set { _MainMenuModel = value; }
         }
 
-        private DataBaseMenuController _DataBaseController = new DataBaseMenuController();
-        public DataBaseMenuController DataBaseController
+        private DataBaseMenuController _DataBaseMenuController = new DataBaseMenuController();
+        public DataBaseMenuController DataBaseMenuController
         {
-            get { return _DataBaseController; }
-            set { _DataBaseController = value; }
+            get { return _DataBaseMenuController; }
+            set { _DataBaseMenuController = value; }
         }
 
         private HotelServiceVerificationController _HotelServiceVerificationController = new HotelServiceVerificationController();
@@ -37,30 +36,22 @@ namespace HotelCalcApp.Controller.Menu
             set { _MainView = value; }
         }
 
-        private StringBuilder _Message = new StringBuilder();
-        public StringBuilder Message
-        {
-            get { return _Message; }
-            set { _Message = value; }
-        }
 
         /// <summary>Поток главноего(меню) отображения</summary>
         public void MainViewStream()
         {
-            ConsoleKeyInfo btn;
             do
             {
                 Console.Clear();
-                MainView.MessageOutput(_Message.Insert(0, MainMenuModel.MAIN_VIEW_MENU));
-                _Message.Clear();
+                MainView.MessageOutput(Message.Insert(0, MainMenuModel.MAIN_VIEW_MENU));
+                Message.Clear();
                 btn = Console.ReadKey();
 
                 switch (btn.Key)
                 {
                     case ConsoleKey.D1:
-                        // TODO: тут добавить вызов соответствующего контроллера.
-                        Console.WriteLine(".    Вызов контроллера БД");
-                        DataBaseController.DataBaseViewStream();
+                       // Вызов контроллера БД (Меню команд для работы с базой данных);
+                        DataBaseMenuController.DatabaseCommandsMenu();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.
@@ -77,16 +68,16 @@ namespace HotelCalcApp.Controller.Menu
         /// <summary>Действия при старте программы</summary>
         public void StartApp()
         {
-            MainView.MessageOutput(_Message.Insert(0, MainMenuModel.START_APP_MESSAGE));
-            _Message.Clear();
+            MainView.MessageOutput(Message.Insert(0, MainMenuModel.START_APP_MESSAGE));
+            Message.Clear();
             Console.ReadKey();
         }
 
         /// <summary>Действия при завершении программы</summary>
         public void StopApp()
         {
-            _Message.Clear();
-            MainView.MessageOutput(_Message.Insert(0, MainMenuModel.STOP_APP_MESSAGE));
+            Message.Clear();
+            MainView.MessageOutput(Message.Insert(0, MainMenuModel.STOP_APP_MESSAGE));
             Console.ReadKey();
         }
     }

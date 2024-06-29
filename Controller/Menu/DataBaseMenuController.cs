@@ -1,30 +1,18 @@
 ﻿using HotelCalcApp.Model.Data;
 using HotelCalcApp.Model.Menu;
 using HotelCalcApp.View.Menu;
-using System.Text;
 
 namespace HotelCalcApp.Controller.Menu
 {
     /// <summary>Контроллер взаимодействия с Базой данных(CRUD)</summary>
-    public class DataBaseMenuController
+    public class DataBaseMenuController : BaseMenuController
     {
-        /// <summary>Контекст базы данных</summary>
-        HotelCalcAppDBContext db = new HotelCalcAppDBContext();
-
-        /// <summary>Сообщение</summary>
-        private StringBuilder _Message = new StringBuilder();
-        public StringBuilder Message
-        {
-            get { return _Message; }
-            set { _Message = value; }
-        }
-
         /// <summary>Отображение работы с базой данных</summary>
-        private DataBaseMenuView _DataBaseView = new DataBaseMenuView();
-        public DataBaseMenuView DataBaseView
+        private DataBaseMenuView _DataBaseMenuView = new DataBaseMenuView();
+        public DataBaseMenuView DataBaseMenuView
         {
-            get { return _DataBaseView; }
-            set { _DataBaseView = value; }
+            get { return _DataBaseMenuView; }
+            set { _DataBaseMenuView = value; }
         }
 
         /// <summary>Добавление данных в базу данных</summary>
@@ -50,14 +38,13 @@ namespace HotelCalcApp.Controller.Menu
 
 
         /// <summary>Поток  Отображения меню работы с базой данных</summary>
-        public void DataBaseViewStream()
+        public void DatabaseCommandsMenu()
         {
-            ConsoleKeyInfo btn;
             do
             {
                 Console.Clear();
-                DataBaseView.MessageOutput(_Message.Insert(0, DataBaseMenuModel.DATABASE_VIEW_MENU));
-                _Message.Clear();
+                DataBaseMenuView.MessageOutput(Message.Insert(0, DataBaseMenuModel.DATABASE_VIEW_MENU));
+                Message.Clear();
                 btn = Console.ReadKey();
 
                 switch (btn.Key)
@@ -65,13 +52,17 @@ namespace HotelCalcApp.Controller.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
-                        AddDataToDBController.AddDataToDBViewStream();
+                        AddDataToDBController.AddDataToDBCommandsMenu();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.
-                        Console.WriteLine(".    Вызов контроллера РЕДАКТИРОВАТЬ ДАННЫЕ");
+                        Console.WriteLine(".    Вызов контроллера ЧТЕНИЯ ДАННЫХ");
                         return;
                     case ConsoleKey.D3:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов контроллера РЕДАКТИРОВАТЬ ДАННЫЕ");
+                        return;
+                    case ConsoleKey.D4:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера УДАЛИТЬ ДАННЫЕ");
                         return;
