@@ -5,7 +5,7 @@ using HotelCalcApp.View.Menu;
 namespace HotelCalcApp.Controller.Menu
 {
     /// <summary>Контроллер добавления данных в базу данных</summary>
-    public class AddDataToDBMenuController : BaseMenuController
+    public class AddingDataToDatabaseMenuController : BaseMenuController
     {
         /// <summary>Отображение меню для работы с базой данных</summary>
         private AddDataToDBMenuView _AddDataToDBMenuView = new AddDataToDBMenuView();
@@ -32,7 +32,7 @@ namespace HotelCalcApp.Controller.Menu
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов метода ДОБАВИТЬ ОТЕЛЬ");
                         //  TODO:   Подумать как избавиться от зависимости(Как вариант - использовать интерфейс)
-                        getDataFromDBMenuController.GetHotel();
+                        _DataExtractionMenuController.GetHotel();
                         AddHotel(DataEntry());
                         break;
                     case ConsoleKey.D2:
@@ -69,8 +69,8 @@ namespace HotelCalcApp.Controller.Menu
         public void AddHotel(String nameHotel)
         {
             Hotel newHotel = new Hotel { NameHotel = nameHotel };
-            db.Hotels.Add(newHotel);
-            db.SaveChanges();
+            _DataBase.Hotels.Add(newHotel);
+            _DataBase.SaveChanges();
         }
 
         /// <summary>Ввод данных пользователем</summary>

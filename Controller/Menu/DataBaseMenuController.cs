@@ -1,5 +1,4 @@
-﻿using HotelCalcApp.Model.Data;
-using HotelCalcApp.Model.Menu;
+﻿using HotelCalcApp.Model.Menu;
 using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
@@ -7,35 +6,20 @@ namespace HotelCalcApp.Controller.Menu
     /// <summary>Контроллер взаимодействия с Базой данных(CRUD)</summary>
     public class DataBaseMenuController : BaseMenuController
     {
-        /// <summary>Отображение работы с базой данных</summary>
+        private DataBaseMenuModel _DataBaseMenuModel = new DataBaseMenuModel();
+        public DataBaseMenuModel DataBaseMenuModel
+        {
+            get { return _DataBaseMenuModel; }
+            set { _DataBaseMenuModel = value;}
+        }
+
+
         private DataBaseMenuView _DataBaseMenuView = new DataBaseMenuView();
         public DataBaseMenuView DataBaseMenuView
         {
             get { return _DataBaseMenuView; }
             set { _DataBaseMenuView = value; }
         }
-
-        /// <summary>Добавление данных в базу данных</summary>
-        private AddDataToDBMenuController _AddDataToDBController = new AddDataToDBMenuController();
-        public AddDataToDBMenuController AddDataToDBController
-        {
-            get { return _AddDataToDBController; }
-            set { _AddDataToDBController = value; }
-        }
-
-
-        //  TODO:   Перенести в соответствующее меню.
-        public void GetHotel()
-        {
-            // получаем объекты из бд и выводим на консоль
-            var hotels = db.Hotels.ToList();
-            Console.WriteLine("Данные после добавления:");
-            foreach (Hotel hotel in hotels)
-            {
-                Console.WriteLine($"{hotel.Id}.{hotel.NameHotel}");
-            }
-        }
-
 
         /// <summary>Поток  Отображения меню работы с базой данных</summary>
         public void DatabaseCommandsMenu()
@@ -52,7 +36,7 @@ namespace HotelCalcApp.Controller.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
-                        AddDataToDBController.AddDataToDBCommandsMenu();
+                        _AddingDataToDatabaseMenuController.AddDataToDBCommandsMenu();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.

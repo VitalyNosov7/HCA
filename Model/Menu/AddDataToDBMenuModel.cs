@@ -2,7 +2,7 @@
 {
     public class AddDataToDBMenuModel
     {
-        internal const String ADD_DATA_TO_DB_VIEW_MENU = "ДОБАВИТЬ ДАННЫЕ:\n" +
+        internal  String ADD_DATA_TO_DB_VIEW_MENU = "ДОБАВИТЬ ДАННЫЕ:\n" +
             "1.     ОТЕЛИ\n" +
             "2.     СЕРВИСЫ ОТЕЛЯ\n" +
             "3.     ЦЕНЫ(ТАРИФЫ)\n" +

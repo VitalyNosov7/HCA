@@ -1,8 +1,8 @@
 ﻿namespace HotelCalcApp.Model.Menu
 {
-    public class GetDataFromDBMenuModel
+    public class DataExtractionMenuModel
     {
-        internal const String GET_DATA_FROM_DB_VIEW_MENU = "ПОЛУЧИТЬ ДАННЫЕ:\n" +
+        internal String GET_DATA_FROM_DB_VIEW_MENU = "ПОЛУЧИТЬ ДАННЫЕ:\n" +
             "1.     ОТЕЛИ\n" +
             "2.     СЕРВИСЫ ОТЕЛЯ\n" +
             "3.     ЦЕНЫ(ТАРИФЫ)\n" +

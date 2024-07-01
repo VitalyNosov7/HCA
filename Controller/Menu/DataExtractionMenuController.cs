@@ -4,22 +4,32 @@ using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {
-    public class GetDataFromDBMenuController : BaseMenuController
+    /// <summary>Контроллер меню получения данных</summary>
+    public class DataExtractionMenuController : BaseMenuController
     {
-        private GetDataFromDBMenuView _GetDataFromDBMenuView = new GetDataFromDBMenuView();
-        public GetDataFromDBMenuView GetDataFromDBMenuView
+        private DataExtractionMenuModel _DataExtractionMenuModel = new DataExtractionMenuModel();
+        public DataExtractionMenuModel DataExtractionMenuModel
         {
-            get { return _GetDataFromDBMenuView; }
-            set { _GetDataFromDBMenuView = value; }
+            get { return _DataExtractionMenuModel; }
+            set { _DataExtractionMenuModel = value;}
         }
 
-        public void GetDataFromDBCommandsMenu()
+
+        private DataExtractionMenuView _DataExtractionMenuView = new DataExtractionMenuView();
+        public DataExtractionMenuView DataExtractionMenuView
+        {
+            get { return _DataExtractionMenuView; }
+            set { _DataExtractionMenuView = value; }
+        }
+
+        /// <summary>Меню команд для получения данных из базы данных</summary>
+        public void CommandsMenuForExtractingDataFromTheDatabase()
         {
             do
             {
                 Console.Clear();
 
-                GetDataFromDBMenuView.MessageOutput(Message.Insert(0, GetDataFromDBMenuModel.GET_DATA_FROM_DB_VIEW_MENU));
+                DataExtractionMenuView.MessageOutput(Message.Insert(0, DataExtractionMenuModel.GET_DATA_FROM_DB_VIEW_MENU));
                 Message.Clear();
                 btn = Console.ReadKey();
 
@@ -45,7 +55,7 @@ namespace HotelCalcApp.Controller.Menu
         public void GetHotel()
         {
             // получаем объекты из бд и выводим на консоль
-            var hotels = db.Hotels.ToList();
+            var hotels = _DataBase.Hotels.ToList();
             //  TODO:   Вынести сообщение в модель!
             Console.WriteLine("Список отелей:");
             foreach (Hotel hotel in hotels)

@@ -1,15 +1,13 @@
-﻿
-using HotelCalcApp.Model.Data;
+﻿using HotelCalcApp.Model.Data;
 using System.Text;
 
 namespace HotelCalcApp.Controller.Menu
 {
     public abstract class BaseMenuController
     {
-        /// <summary>Контекст базы данных</summary>
-        internal HotelCalcAppDBContext db = new HotelCalcAppDBContext();
-        internal AddDataToDBMenuController addDataToDBMenuController;
-        internal GetDataFromDBMenuController getDataFromDBMenuController;
+        internal HotelCalcAppDBContext _DataBase = new HotelCalcAppDBContext();
+        internal AddingDataToDatabaseMenuController _AddingDataToDatabaseMenuController;
+        internal DataExtractionMenuController _DataExtractionMenuController;
 
         internal ConsoleKeyInfo btn;
 
