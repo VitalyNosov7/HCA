@@ -1,10 +1,9 @@
-﻿using HotelCalcApp.Model.Data;
-using HotelCalcApp.Model.Menu;
+﻿using HotelCalcApp.Model.Menu;
 using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {
-    /// <summary>Контроллер меню получения данных</summary>
+    /// <summary>Контроллер Меню получения данных</summary>
     public class DataExtractionMenuController : BaseMenuController
     {
         private DataExtractionMenuModel _DataExtractionMenuModel = new DataExtractionMenuModel();
@@ -22,14 +21,14 @@ namespace HotelCalcApp.Controller.Menu
             set { _DataExtractionMenuView = value; }
         }
 
-        /// <summary>Меню команд для получения данных из базы данных</summary>
-        public void CommandsMenuForExtractingDataFromTheDatabase()
+        /// <summary>Показать пункты Меню для получения данных из базы данных</summary>
+        public void ShowItemsMenuForExtractingDataFromTheDatabase()
         {
             do
             {
                 Console.Clear();
 
-                DataExtractionMenuView.MessageOutput(Message.Insert(0, DataExtractionMenuModel.GET_DATA_FROM_DB_VIEW_MENU));
+                DataExtractionMenuView.MessageOutput(Message.Insert(0, DataExtractionMenuModel.MENU_ITEMS_FOR_GETTING_DATA_FROM_THE_DATABASE));
                 Message.Clear();
                 btn = Console.ReadKey();
 
@@ -38,7 +37,8 @@ namespace HotelCalcApp.Controller.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов метода ПОЛУЧИТЬ СПИСОК ОТЕЛЕЙ");
-                        GetHotel();
+                        Console.WriteLine("Список отелей:");
+                        DataExtractionMenuModel.GetHotels();
                         break;
                     case ConsoleKey.D6:
                         // TODO: тут добавить вызов соответствующего контроллера.
@@ -49,19 +49,6 @@ namespace HotelCalcApp.Controller.Menu
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
            // GoToMainMenu();
-        }
-
-        //  Получаем отели из базы данных
-        public void GetHotel()
-        {
-            // получаем объекты из бд и выводим на консоль
-            var hotels = _DataBase.Hotels.ToList();
-            //  TODO:   Вынести сообщение в модель!
-            Console.WriteLine("Список отелей:");
-            foreach (Hotel hotel in hotels)
-            {
-                Console.WriteLine($"{hotel.Id}.{hotel.NameHotel}");
-            }
         }
     }
 }

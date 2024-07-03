@@ -1,28 +1,34 @@
-﻿using HotelCalcApp.Model.Data;
-using HotelCalcApp.Model.Menu;
+﻿using HotelCalcApp.Model.Menu;
 using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {
-    /// <summary>Контроллер добавления данных в базу данных</summary>
+    /// <summary>Контроллер  Меню добавления данных в базу данных</summary>
     public class AddingDataToDatabaseMenuController : BaseMenuController
     {
-        /// <summary>Отображение меню для работы с базой данных</summary>
-        private AddDataToDBMenuView _AddDataToDBMenuView = new AddDataToDBMenuView();
-        public AddDataToDBMenuView AddDataToDBMenuView
+        private AddingDataToDatabaseMenuModel _AddingDataToDatabaseMenuModel = new AddingDataToDatabaseMenuModel();
+        public AddingDataToDatabaseMenuModel AddingDataToDatabaseMenuModel
         {
-            get { return _AddDataToDBMenuView; }
-            set { _AddDataToDBMenuView = value; }
+            get { return _AddingDataToDatabaseMenuModel; }
+            set { _AddingDataToDatabaseMenuModel = value;}
         }
 
-        /// <summary>Меню команд для работы с базой данных</summary>
-        public void AddDataToDBCommandsMenu()
+        /// <summary>Отображение пунктов Меню для добавления данных в базу данных</summary>
+        private AddingDataToDatabaseMenuView _AddingDataToDatabaseMenuView = new AddingDataToDatabaseMenuView();
+        public AddingDataToDatabaseMenuView AddingDataToDatabaseMenuView
+        {
+            get { return _AddingDataToDatabaseMenuView; }
+            set { _AddingDataToDatabaseMenuView = value; }
+        }
+
+        /// <summary>Меню добавления данных в базу данных</summary>
+        public void ShowItemsMenuForAddingDataToDatabase()
         {
             do
             {
                 Console.Clear();
 
-                AddDataToDBMenuView.MessageOutput(Message.Insert(0, AddDataToDBMenuModel.ADD_DATA_TO_DB_VIEW_MENU));
+                AddingDataToDatabaseMenuView.MessageOutput(Message.Insert(0, AddingDataToDatabaseMenuModel.ADD_DATA_TO_DB_VIEW_MENU));
                 Message.Clear();
                 btn = Console.ReadKey();
 
@@ -32,8 +38,8 @@ namespace HotelCalcApp.Controller.Menu
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов метода ДОБАВИТЬ ОТЕЛЬ");
                         //  TODO:   Подумать как избавиться от зависимости(Как вариант - использовать интерфейс)
-                        _DataExtractionMenuController.GetHotel();
-                        AddHotel(DataEntry());
+                        // _DataExtractionMenuController.GetHotel();
+                        AddingDataToDatabaseMenuModel.AddHotel(AddingDataToDatabaseMenuModel.DataEntry());
                         break;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.
@@ -59,33 +65,7 @@ namespace HotelCalcApp.Controller.Menu
             }
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
-            GoToMainMenu();
-        }
-
-        /// <summary>
-        /// Добавить отель.
-        /// </summary>
-        /// <param name="nameHotel">Название отеля</param>
-        public void AddHotel(String nameHotel)
-        {
-            Hotel newHotel = new Hotel { NameHotel = nameHotel };
-            _DataBase.Hotels.Add(newHotel);
-            _DataBase.SaveChanges();
-        }
-
-        /// <summary>Ввод данных пользователем</summary>
-        public String DataEntry()
-        {
-            String result = String.Empty;
-            result = Console.ReadLine();
-            return result;
-        }
-
-        /// <summary>Переход в Поток главноего(меню) отображения</summary>
-        public void GoToMainMenu()
-        {
-            MainMenuController mainController = new MainMenuController();
-            mainController.MainViewStream();
+           // GoToMainMenu();
         }
     }
 }

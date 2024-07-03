@@ -36,7 +36,7 @@ namespace HotelCalcApp.Controller.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
-                        _AddingDataToDatabaseMenuController.AddDataToDBCommandsMenu();
+                        _AddingDataToDatabaseMenuController.ShowItemsMenuForAddingDataToDatabase();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.

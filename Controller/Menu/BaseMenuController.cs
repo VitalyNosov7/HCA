@@ -5,7 +5,6 @@ namespace HotelCalcApp.Controller.Menu
 {
     public abstract class BaseMenuController
     {
-        internal HotelCalcAppDBContext _DataBase = new HotelCalcAppDBContext();
         internal AddingDataToDatabaseMenuController _AddingDataToDatabaseMenuController;
         internal DataExtractionMenuController _DataExtractionMenuController;
 
