@@ -1,62 +1,54 @@
-﻿using HotelCalcApp.Model.Data;
-using HotelCalcApp.Model.Services;
+using HotelCalcApp.Model.Data;
 
 namespace HotelCalcApp.Controller
 {
-    // TODO: Подумать о переносе элементов этого класса в модель  HotelServiceVerificationModelService
-
     /// <summary>Контроллер Сервиса для проверки  сервиса отеля</summary>
     public class HotelServiceVerificationController
     {
-        /// <summary>Актуальная дата периода стоп продаж сервиса</summary>
-        private DateTime _DateOfActualPeriodServiceSaleStop;
 
-        /// <summary>Текущий Стоп продаж сервиса</summary>
-        private ServiceSaleStop _CurrentTheServiceSaleStop;
+        private Hotel _CurrentHotel;
+        private HotelService _CurrentHotelService;
+        private ServiceSaleStop _CurrentStopSaleService;
 
-        /// <summary>Экземпляр Сервиса для проверки  сервиса отеля</summary>
-        private HotelServiceVerificationModelService _HotelServiceVerificationService;
-
-        /// <summary>Актуальная дата периода стоп продаж сервиса</summary>
-        public DateTime DateOfActualPeriodServiceSaleStop
+        public Hotel CurrentHotel
         {
             get
             {
-                return _DateOfActualPeriodServiceSaleStop;
+                return _CurrentHotel;
             }
             set
             {
-                _DateOfActualPeriodServiceSaleStop = value;
+                _CurrentHotel = value;
             }
         }
 
-        /// <summary>Текущий Стоп продаж сервиса</summary>
-        public ServiceSaleStop CurrentTheServiceSaleStop
+        /// <summary>Проверяемый сервис отеля</summary>
+        public HotelService CurrentHotelService
         {
             get
             {
-                return _CurrentTheServiceSaleStop;
+                return _CurrentHotelService;
             }
             set
             {
-                _CurrentTheServiceSaleStop = value;
+                _CurrentHotelService = value;
             }
         }
 
-        /// <summary>Экземпляр Сервиса для проверки  сервиса отеля</summary>
-        public HotelServiceVerificationModelService HotelServiceVerificationService
+        /// <summary>Актуальный период Стоп Продаж сервис отеля</summary>
+        public ServiceSaleStop CurrentStopSaleService
         {
             get
             {
-                return _HotelServiceVerificationService;
+                return _CurrentStopSaleService;
             }
             set
             {
-                _HotelServiceVerificationService = value;
+                _CurrentStopSaleService = value;
             }
         }
 
-        /// <summary>Экземпляр Контроллера Сервиса для проверки  сервиса отеля</summary>
+
         public HotelServiceVerificationController() { }
 
         // TODO:    1.  Определить актуальную дату периодов сервисов отеля статуса - Стоп Продаж;
@@ -73,12 +65,45 @@ namespace HotelCalcApp.Controller
         public DateTime ReturnDateOfActualPeriodServiceSaleStop(DateTime currentDate, List<ServiceSaleStop> salesStopDataSource)
         {
             DateTime searchedActualDate = new DateTime();
+<<<<<<< HEAD
+=======
+
+>>>>>>> 86e31267fe84e271cd103ff2dde7a54f191d76d8
             //  1.  Поиск актуального периода:
             //      1.1.    Актуальный период должен быть меньше или равен currentDate
             //              и должен быть больше остальных из уже имеющихся!
             var sorted = salesStopDataSource.OrderByDescending(x => x.DateOfActualPeriodServiceSaleStop).ToList();
 
             Console.WriteLine("\nАктуальный период на указанную дату:");
+<<<<<<< HEAD
+=======
+
+            // DateTime currentDate = Convert.ToDateTime("09.04.2024");
+
+            Console.WriteLine($"На дату : {currentDate}");
+
+            Console.WriteLine("\nОтсортированный список по убыванию(по актуальной дате):");
+
+            var sorted = salesStopDataSource.OrderByDescending(x => x.DateOfActualPeriodServiceSaleStop).ToList();
+
+            foreach (var stopService in sorted)
+            {
+                Console.WriteLine($"Актуальная дата: {stopService.DateOfActualPeriodServiceSaleStop} " +
+                    $"старт периода: {stopService.DateStartServiceSaleStop} " +
+                    $"конец периода : {stopService.DateEndServiceSaleStop}");
+            }
+
+            for (int i = 0; i < sorted.Count; i++)
+            {
+                if (currentDate >= sorted[i].DateOfActualPeriodServiceSaleStop)
+                {
+                    searchedActualDate = sorted[i].DateOfActualPeriodServiceSaleStop;
+                    //Console.WriteLine($"Актуальная дата в списке : {sorted[i].DateOfActualPeriodServiceSaleStop}");
+                    Console.WriteLine($"\nАктуальная дата в списке : {searchedActualDate}");
+                    break;
+                }
+            }
+>>>>>>> 86e31267fe84e271cd103ff2dde7a54f191d76d8
 
             Console.WriteLine($"На дату : {currentDate}");
 
