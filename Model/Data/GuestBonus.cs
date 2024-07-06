@@ -1,7 +1,7 @@
 ﻿namespace HotelCalcApp.Model.Data
 {
     /// <summary>Бонус Гостя</summary>
-    public class GuestBonus
+    public class GuestBonus : BaseObjectOfDatabase
     {
         /// <summary>Идентификатор бонуса гостя</summary>
         public Guid Id { get; set; }

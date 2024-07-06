@@ -38,7 +38,7 @@ namespace HotelCalcApp.Controller.Menu
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов метода ПОЛУЧИТЬ СПИСОК ОТЕЛЕЙ");
                         Console.WriteLine("Список отелей:");
-                        DataExtractionMenuModel.GetHotels();
+                        DataExtractionMenuModel.GettingDataFromDatabase.GetHolels();
                         break;
                     case ConsoleKey.D6:
                         // TODO: тут добавить вызов соответствующего контроллера.

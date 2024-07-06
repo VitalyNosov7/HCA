@@ -1,77 +1,47 @@
-﻿using System.Diagnostics;
-
-namespace HotelCalcApp.Model.Data
+﻿namespace HotelCalcApp.Model.Data
 {
     /// <summary>Стоимость сервиса отеля</summary>
-    public class HotelServicePrice
+    public class HotelServicePrice : BaseObjectOfDatabase
     {
-        private DateTime _DateActualPrice;
-        private DateTime _DateStartPrice;
-        private DateTime _DateEndPrice;
-        private Decimal _PriceService;
-
-
         /// <summary>Идентификатор цены отеля</summary>
         public Guid Id { get; set; }
 
+        private DateTime _DateActualPrice;
         /// <summary>Дата актуальных цен</summary>
         public DateTime DateActualPrice
         {
-            get
-            {
-                return _DateActualPrice;
-            }
-            set
-            {
-                _DateActualPrice = value;
-            }
+            get { return _DateActualPrice; }
+            set { _DateActualPrice = value; }
         }
 
+        private DateTime _DateStartPrice;
         /// <summary>Дата начала действия стоимости сервиса</summary>
         public DateTime DateStartPrice
         {
-            get
-            {
-                return _DateStartPrice;
-            }
-            set
-            {
-                _DateStartPrice = value;
-            }
+            get { return _DateStartPrice; }
+            set { _DateStartPrice = value; }
         }
 
+        private DateTime _DateEndPrice;
         /// <summary>Дата окончания действия стоимости сервиса</summary>
         public DateTime DateEndPrice
         {
-            get
-            {
-                return _DateEndPrice;
-            }
-            set
-            {
-                _DateEndPrice = value;
-            }
+            get { return _DateEndPrice; }
+            set { _DateEndPrice = value; }
         }
 
+        private Decimal _PriceService;
         /// <summary>Стоимость сервиса</summary>
         public Decimal PriceService
         {
-            get
-            {
-                return _PriceService;
-            }
-            set
-            {
-                _PriceService = value;
-            }
+            get { return _PriceService; }
+            set { _PriceService = value; }
         }
 
         /// <summary>Ссылка на идентификатор сервиса отеля</summary>
         public Int64 IdHotelService { get; set; }
 
-        /// <summary>
-        /// Новая цена сервиса отеля
-        /// </summary>
+        /// <summary>Новая цена сервиса отеля</summary>
         /// <param name="dateActualPrice">Актуальная дата стоимости сервиса</param>
         /// <param name="dateStartPrice">Дата начала действия стоимости сервиса</param>
         /// <param name="dateEndPrice">Дата окончания действия стоимости сервиса</param>

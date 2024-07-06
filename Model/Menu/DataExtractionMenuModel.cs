@@ -1,4 +1,5 @@
 ﻿using HotelCalcApp.Model.Data;
+using HotelCalcApp.Model.Services.Database;
 
 namespace HotelCalcApp.Model.Menu
 {
@@ -15,19 +16,18 @@ namespace HotelCalcApp.Model.Menu
 
         internal String MESSAGE_IS_A_LIST_OF_HOTELS = "Список отелей:";
 
-        /// <summary>Получаем отели из базы данных</summary>
-        public List<Hotel> GetHotels()
-        {
-            List<Hotel> hotels = _DataBase.Hotels.ToList();
-            return hotels;
-        }
+        private GettingDataFromDatabase _GettingDataFromDatabase = new GettingDataFromDatabase();
+        public GettingDataFromDatabase GettingDataFromDatabase {  get { return _GettingDataFromDatabase; } }
+
 
         //  TODO:   Переработать метод вывода элементов БД. Подумать как можно обобщить, чтобы метод стал универсальным!
-        void ShowDataItems(List<Hotel>  dataItems)
+        void ShowHotels()
         {
-            foreach (Hotel item in dataItems)
+            List<Hotel> hotels = GettingDataFromDatabase.GetHolels();
+
+            foreach (Hotel hotel in hotels)
             {
-                Console.WriteLine($"{item.Id}.{item.NameHotel}");
+                Console.WriteLine($"{hotel.Id}.{hotel.NameHotel}");
             }
         }
     }
