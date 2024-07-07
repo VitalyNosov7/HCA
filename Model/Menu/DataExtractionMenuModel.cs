@@ -1,5 +1,7 @@
 ﻿using HotelCalcApp.Model.Data;
 using HotelCalcApp.Model.Services.Database;
+using HotelCalcApp.View.Menu;
+using System.Text;
 
 namespace HotelCalcApp.Model.Menu
 {
@@ -16,6 +18,13 @@ namespace HotelCalcApp.Model.Menu
 
         internal String MESSAGE_IS_A_LIST_OF_HOTELS = "Список отелей:";
 
+        private DataExtractionMenuView _DataExtractionMenuView = new DataExtractionMenuView();
+        public DataExtractionMenuView DataExtractionMenuView
+        {
+            get { return _DataExtractionMenuView; }
+            set { _DataExtractionMenuView = value; }
+        }
+
         private GettingDataFromDatabase _GettingDataFromDatabase = new GettingDataFromDatabase();
         public GettingDataFromDatabase GettingDataFromDatabase {  get { return _GettingDataFromDatabase; } }
 
@@ -29,6 +38,36 @@ namespace HotelCalcApp.Model.Menu
             {
                 Console.WriteLine($"{hotel.Id}.{hotel.NameHotel}");
             }
+        }
+
+        /// <summary>Показать пункты Меню для получения данных из базы данных</summary>
+        public void ShowItemsMenuForExtractingDataFromTheDatabase()
+        {
+            do
+            {
+                Console.Clear();
+
+                DataExtractionMenuView.MessageOutput(Message.Insert(0, MENU_ITEMS_FOR_GETTING_DATA_FROM_THE_DATABASE));
+                Message.Clear();
+                btn = Console.ReadKey();
+
+                switch (btn.Key)
+                {
+                    case ConsoleKey.D1:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов метода ПОЛУЧИТЬ СПИСОК ОТЕЛЕЙ");
+                        Console.WriteLine("Список отелей:");
+                        GettingDataFromDatabase.GetHolels();
+                        break;
+                    case ConsoleKey.D6:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов метода МЕНЮ БАЗА ДАННЫХ)");
+                        return;
+                }
+            }
+            while (!(btn.Key == ConsoleKey.Escape));
+            Console.Clear();
+            // GoToMainMenu();
         }
     }
 }
