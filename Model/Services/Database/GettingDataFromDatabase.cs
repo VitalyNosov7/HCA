@@ -2,12 +2,8 @@
 
 namespace HotelCalcApp.Model.Services.Database
 {
-    public class GettingDataFromDatabase
+    public class GettingDataFromDatabase : BaseServiceForWorkingWithDatabase
     {
-        private HotelCalcAppDBContext _DataBase = new HotelCalcAppDBContext();
-        public HotelCalcAppDBContext DataBase { get { return _DataBase; } }
-
-
         public List<Hotel> GetHolels()
         {
             List<Hotel> hotels = DataBase.Hotels.ToList();
