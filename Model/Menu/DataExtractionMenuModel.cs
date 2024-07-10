@@ -1,7 +1,6 @@
 ﻿using HotelCalcApp.Model.Data;
 using HotelCalcApp.Model.Services.Database;
 using HotelCalcApp.View.Menu;
-using System.Text;
 
 namespace HotelCalcApp.Model.Menu
 {
