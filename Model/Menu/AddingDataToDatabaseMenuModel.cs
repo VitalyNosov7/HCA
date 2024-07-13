@@ -76,11 +76,12 @@ namespace HotelCalcApp.Model.Menu
             return result;
         }
 
+        //  TODO:   дублирование кода (в классе DataBaseMenuModel)
         /// <summary>Переход в Поток главноего(меню) отображения</summary>
         public void GoToMainMenu()
         {
-            MainMenuController mainController = new MainMenuController();
-            mainController.MainViewStream();
+            MainMenuModel mainMenuModel = new MainMenuModel();
+            mainMenuModel.MainViewStream();
         }
     }
 }

@@ -24,10 +24,6 @@ namespace HotelCalcApp.Model.Menu
             set { _DataExtractionMenuView = value; }
         }
 
-        private GettingDataFromDatabase _GettingDataFromDatabase = new GettingDataFromDatabase();
-        public GettingDataFromDatabase GettingDataFromDatabase {  get { return _GettingDataFromDatabase; } }
-
-
         //  TODO:   Переработать метод вывода элементов БД. Подумать как можно обобщить, чтобы метод стал универсальным!
         void ShowHotels()
         {

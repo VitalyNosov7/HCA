@@ -1,5 +1,4 @@
 ﻿using HotelCalcApp.Model.Menu;
-using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {

@@ -4,8 +4,9 @@ namespace HotelCalcApp.Controller.Menu
 {
     public abstract class BaseMenuController
     {
-        internal AddingDataToDatabaseMenuController _AddingDataToDatabaseMenuController;
-        internal DataExtractionMenuController _DataExtractionMenuController;
+        internal AddingDataToDatabaseMenuController _addingDataToDatabaseMenuController;
+        internal DataExtractionMenuController _dataExtractionMenuController;
+        internal DataBaseMenuController _dataBaseMenuController;
 
         //  TODO:   после переноса методов из контроллеров - удалить это поле.
         internal ConsoleKeyInfo btn;

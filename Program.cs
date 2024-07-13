@@ -8,8 +8,8 @@ namespace HotelCalcApp
         static void Main()
         {
             MainMenuController mainController = new MainMenuController();
-            mainController.StartApp();
-            mainController.MainViewStream();
+            mainController.MainMenuModel.StartApp();
+            mainController.MainMenuModel.MainViewStream();
           //  mainController.StopApp();
 
 
