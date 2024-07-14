@@ -3,29 +3,23 @@ using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {
-    /// <summary>Главный контроллер</summary>
+    /// <summary>Контроллер Главного Меню </summary>
     public class MainMenuController : BaseMenuController
     {
 
-        private MainMenuModel _MainMenuModel = new MainMenuModel();
+        private MainMenuModel _mainMenuModel = new MainMenuModel();
         public MainMenuModel MainMenuModel
         {
-            get { return _MainMenuModel; }
-            set { _MainMenuModel = value; }
+            get { return _mainMenuModel; }
+            set { _mainMenuModel = value; }
         }
 
-        private DataBaseMenuController _DataBaseMenuController = new DataBaseMenuController();
-        public DataBaseMenuController DataBaseMenuController
+        /// <summary>Основное Отображение</summary>
+        private MainMenuView _MainView = new MainMenuView();
+        public MainMenuView MainView
         {
-            get { return _DataBaseMenuController; }
-            set { _DataBaseMenuController = value; }
-        }
-
-        private HotelServiceVerificationController _HotelServiceVerificationController = new HotelServiceVerificationController();
-        public HotelServiceVerificationController HotelServiceVerifController
-        {
-            get { return _HotelServiceVerificationController; }
-            set { _HotelServiceVerificationController = value; }
+            get { return _MainView; }
+            set { _MainView = value; }
         }
     }
 }

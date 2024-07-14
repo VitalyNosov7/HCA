@@ -1,7 +1,4 @@
-﻿using HotelCalcApp.Controller.Menu;
-using HotelCalcApp.View.Menu;
-
-namespace HotelCalcApp.Model.Menu
+﻿namespace HotelCalcApp.Model.Menu
 {
     public class MainMenuModel : BaseMenuModel
     {
@@ -13,13 +10,6 @@ namespace HotelCalcApp.Model.Menu
             "2.     СЕРВИСЫ\n" +
             "ESC.   ВЫХОД ИЗ ПРОГРАММЫ";
 
-        /// <summary>Основное Отображение</summary>
-        private MainMenuView _MainView = new MainMenuView();
-        public MainMenuView MainView
-        {
-            get { return _MainView; }
-            set { _MainView = value; }
-        }
 
         /// <summary>Поток главноего(меню) отображения</summary>
         public void MainViewStream()

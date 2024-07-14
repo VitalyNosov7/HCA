@@ -2,22 +2,24 @@
 
 namespace HotelCalcApp.Controller.Menu
 {
+    /// <summary>Базовый Контроллер Меню</summary>
     public abstract class BaseMenuController
     {
-        internal AddingDataToDatabaseMenuController _addingDataToDatabaseMenuController;
-        internal DataExtractionMenuController _dataExtractionMenuController;
-        internal DataBaseMenuController _dataBaseMenuController;
+        private AddingDataToDatabaseMenuController _addingDataToDatabaseMenuController = new AddingDataToDatabaseMenuController();
+        public AddingDataToDatabaseMenuController AddingDataToDatabaseMenuController { get { return _addingDataToDatabaseMenuController; } }
 
-        //  TODO:   после переноса методов из контроллеров - удалить это поле.
-        internal ConsoleKeyInfo btn;
+        private DataExtractionMenuController _dataExtractionMenuController = new DataExtractionMenuController();
+        public DataExtractionMenuController DataExtractionMenuController { get { return _dataExtractionMenuController; } }
 
-        //  TODO:   после переноса методов из контроллеров - удалить это поле.
+        private DataBaseMenuController _dataBaseMenuController = new DataBaseMenuController();
+        public DataBaseMenuController DataBaseMenuController { get { return _dataBaseMenuController; } }
+
         /// <summary>Сообщение</summary>
-        private StringBuilder _Message = new StringBuilder();
+        private StringBuilder _message = new StringBuilder();
         public StringBuilder Message
         {
-            get { return _Message; }
-            set { _Message = value; }
+            get { return _message; }
+            set { _message = value; }
         }
     }
 }
