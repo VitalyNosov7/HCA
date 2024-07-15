@@ -1,7 +1,12 @@
-﻿namespace HotelCalcApp.Model.Menu
+﻿using HotelCalcApp.Interfaces;
+using HotelCalcApp.View.Menu;
+
+namespace HotelCalcApp.Model.Menu
 {
     public class MainMenuModel : BaseMenuModel
     {
+        private MainMenuView _mainMenuView = new MainMenuView();
+
         internal const String START_APP_MESSAGE = "Добро пожаловать в программу HotelCalcApp!";
         internal const String STOP_APP_MESSAGE = "_Выход из программы";
         internal const String MAIN_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
@@ -17,8 +22,9 @@
             do
             {
                 Console.Clear();
-                MainView.MessageOutput(Message.Insert(0, MainMenuModel.MAIN_VIEW_MENU));
-                Message.Clear();
+
+                _mainMenuView.MessageOutput(MAIN_VIEW_MENU);
+
                 btn = Console.ReadKey();
 
                 switch (btn.Key)
@@ -42,6 +48,7 @@
         /// <summary>Действия при старте программы</summary>
         public void StartApp()
         {
+            //  TODO:   Необходимо убрать зависимость от прямого обращения к  MainView
             MainView.MessageOutput(Message.Insert(0, MainMenuModel.START_APP_MESSAGE));
             Message.Clear();
             Console.ReadKey();
@@ -51,8 +58,14 @@
         public void StopApp()
         {
             Message.Clear();
+            //  TODO:   Необходимо убрать зависимость от прямого обращения к  MainView
             MainView.MessageOutput(Message.Insert(0, MainMenuModel.STOP_APP_MESSAGE));
             Console.ReadKey();
+        }
+
+        public void DisplayMessage(String message)
+        {
+
         }
     }
 }

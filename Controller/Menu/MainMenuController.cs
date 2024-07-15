@@ -15,11 +15,11 @@ namespace HotelCalcApp.Controller.Menu
         }
 
         /// <summary>Основное Отображение</summary>
-        private MainMenuView _MainView = new MainMenuView();
+        private MainMenuView _mainView = new MainMenuView();
         public MainMenuView MainView
         {
-            get { return _MainView; }
-            set { _MainView = value; }
+            get { return _mainView; }
+            set { _mainView = value; }
         }
     }
 }
