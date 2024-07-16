@@ -1,5 +1,4 @@
 ﻿using HotelCalcApp.Controller.Menu;
-using HotelCalcApp.Model.Data;
 
 namespace HotelCalcApp
 {
@@ -7,10 +6,10 @@ namespace HotelCalcApp
     {
         static void Main()
         {
-            MainMenuController mainController = new MainMenuController();
-            mainController.MainMenuModel.StartApp();
-            mainController.MainMenuModel.MainViewStream();
-          //  mainController.StopApp();
+            MainMenuController mainMenuController = new MainMenuController();
+            mainMenuController.MainMenuModel.StartApp();
+            mainMenuController.MainMenuModel.MainViewStream();
+            mainMenuController.MainMenuModel.StopApp();
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿namespace HotelCalcApp.Interfaces
 {
+    //  TODO:   интерфейс не реализован. Подумать,, где и как его использовать!
     internal interface IMessageTransferBuffer
     {
         private static String _message = String.Empty;

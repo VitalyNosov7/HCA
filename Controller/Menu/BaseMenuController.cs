@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace HotelCalcApp.Controller.Menu
+﻿namespace HotelCalcApp.Controller.Menu
 {
     /// <summary>Базовый Контроллер Меню</summary>
     public abstract class BaseMenuController
@@ -15,8 +13,8 @@ namespace HotelCalcApp.Controller.Menu
         public DataBaseMenuController DataBaseMenuController { get { return _dataBaseMenuController; } }
 
         /// <summary>Сообщение</summary>
-        private StringBuilder _message = new StringBuilder();
-        public StringBuilder Message
+        private String _message = String.Empty;
+        public String Message
         {
             get { return _message; }
             set { _message = value; }

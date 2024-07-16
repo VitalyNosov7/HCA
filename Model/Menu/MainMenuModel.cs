@@ -1,20 +1,14 @@
-﻿using HotelCalcApp.Interfaces;
-using HotelCalcApp.View.Menu;
-
-namespace HotelCalcApp.Model.Menu
+﻿namespace HotelCalcApp.Model.Menu
 {
     public class MainMenuModel : BaseMenuModel
     {
-        private MainMenuView _mainMenuView = new MainMenuView();
-
-        internal const String START_APP_MESSAGE = "Добро пожаловать в программу HotelCalcApp!";
-        internal const String STOP_APP_MESSAGE = "_Выход из программы";
-        internal const String MAIN_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
+        private const String START_APP_MESSAGE = "Добро пожаловать в программу HotelCalcApp!";
+        private const String STOP_APP_MESSAGE = "_Выход из программы";
+        private const String MAIN_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
             "(нажмите соответствующую цифру для перехода)\n" +
             "1.     БАЗА ДАННЫХ\n" +
             "2.     СЕРВИСЫ\n" +
             "ESC.   ВЫХОД ИЗ ПРОГРАММЫ";
-
 
         /// <summary>Поток главноего(меню) отображения</summary>
         public void MainViewStream()
@@ -23,7 +17,7 @@ namespace HotelCalcApp.Model.Menu
             {
                 Console.Clear();
 
-                _mainMenuView.MessageOutput(MAIN_VIEW_MENU);
+                DisplayMessage(MAIN_VIEW_MENU);
 
                 btn = Console.ReadKey();
 
@@ -48,24 +42,15 @@ namespace HotelCalcApp.Model.Menu
         /// <summary>Действия при старте программы</summary>
         public void StartApp()
         {
-            //  TODO:   Необходимо убрать зависимость от прямого обращения к  MainView
-            MainView.MessageOutput(Message.Insert(0, MainMenuModel.START_APP_MESSAGE));
-            Message.Clear();
+            DisplayMessage(START_APP_MESSAGE);
             Console.ReadKey();
         }
 
         /// <summary>Действия при завершении программы</summary>
         public void StopApp()
         {
-            Message.Clear();
-            //  TODO:   Необходимо убрать зависимость от прямого обращения к  MainView
-            MainView.MessageOutput(Message.Insert(0, MainMenuModel.STOP_APP_MESSAGE));
+            DisplayMessage(STOP_APP_MESSAGE);
             Console.ReadKey();
-        }
-
-        public void DisplayMessage(String message)
-        {
-
         }
     }
 }
