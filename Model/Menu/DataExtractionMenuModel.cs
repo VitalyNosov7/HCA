@@ -1,4 +1,6 @@
 ﻿using HotelCalcApp.Model.Data;
+using HotelCalcApp.Model.Services.Database;
+using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Model.Menu
 {
@@ -15,20 +17,53 @@ namespace HotelCalcApp.Model.Menu
 
         internal String MESSAGE_IS_A_LIST_OF_HOTELS = "Список отелей:";
 
-        /// <summary>Получаем отели из базы данных</summary>
-        public List<Hotel> GetHotels()
+        private DataExtractionMenuView _DataExtractionMenuView = new DataExtractionMenuView();
+        public DataExtractionMenuView DataExtractionMenuView
         {
-            List<Hotel> hotels = _DataBase.Hotels.ToList();
-            return hotels;
+            get { return _DataExtractionMenuView; }
+            set { _DataExtractionMenuView = value; }
         }
 
         //  TODO:   Переработать метод вывода элементов БД. Подумать как можно обобщить, чтобы метод стал универсальным!
-        void ShowDataItems(List<Hotel>  dataItems)
+        void ShowHotels()
         {
-            foreach (Hotel item in dataItems)
+            List<Hotel> hotels = GettingDataFromDatabaseProperty.GetHotels();
+
+            foreach (Hotel hotel in hotels)
             {
-                Console.WriteLine($"{item.Id}.{item.NameHotel}");
+                Console.WriteLine($"{hotel.Id}.{hotel.NameHotel}");
             }
+        }
+
+        /// <summary>Показать пункты Меню для получения данных из базы данных</summary>
+        public void ShowItemsMenuForExtractingDataFromTheDatabase()
+        {
+            do
+            {
+                Console.Clear();
+
+                DisplayMessage(MENU_ITEMS_FOR_GETTING_DATA_FROM_THE_DATABASE);
+
+                btn = Console.ReadKey();
+
+                switch (btn.Key)
+                {
+                    case ConsoleKey.D1:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов метода ПОЛУЧИТЬ СПИСОК ОТЕЛЕЙ");
+                        Console.WriteLine("Список отелей:");
+                       // GettingDataFromDatabase.GetHotels();
+                       ShowHotels();
+                        return;
+                    case ConsoleKey.D6:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов метода МЕНЮ БАЗА ДАННЫХ)");
+                        return;
+                }
+            }
+            while (!(btn.Key == ConsoleKey.Escape));
+            Console.Clear();
+            // GoToMainMenu();
         }
     }
 }

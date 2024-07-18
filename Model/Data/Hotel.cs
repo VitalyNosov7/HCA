@@ -1,48 +1,33 @@
 ﻿namespace HotelCalcApp.Model.Data
 {
     /// <summary>Отель</summary>
-    public class Hotel
+    public class Hotel : BaseObjectOfDatabase
     {
         /// <summary>Идентификатор отеля</summary>
         public Int32 Id { get; set; }
 
         private String _NameHotel = String.Empty;
-        private List<HotelService> _HotelServices;
-
         /// <summary>Название отеля</summary>
         public String NameHotel
         {
-            get
-            {
-                return _NameHotel;
-            }
-            set
-            {
-                _NameHotel = value;
-            }
+            get { return _NameHotel; }
+            set { _NameHotel = value; }
         }
 
+        private List<HotelService> _HotelServices;
         /// <summary>Сервисы отеля</summary>
         public List<HotelService> HotelServices
         {
-            get
-            {
-                return _HotelServices;
-            }
-            set
-            {
-                _HotelServices = value;
-            }
+            get { return _HotelServices; }
+            set { _HotelServices = value; }
         }
 
         public Hotel()
         {
-            
+
         }
 
-        /// <summary>
-        /// Новый отель
-        /// </summary>
+        /// <summary>Новый отель</summary>
         /// <param name="nameHotel">Название отеля</param>
         /// <param name="hotelServices">Список сервисов отеля</param>
         public Hotel(String nameHotel, List<HotelService> hotelServices)

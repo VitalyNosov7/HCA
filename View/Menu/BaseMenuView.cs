@@ -1,18 +1,10 @@
-﻿using System.Text;
+﻿using HotelCalcApp.Interfaces;
 
 namespace HotelCalcApp.View.Menu
 {
-    public abstract class BaseMenuView
+    public abstract class BaseMenuView : IMessageTransferBuffer
     {
-        private StringBuilder _Message = new StringBuilder();
-
-        public StringBuilder Message
-        {
-            get { return _Message; }
-            set { _Message = value; }
-        }
-
-        public void MessageOutput(StringBuilder message)
+        public void MessageOutput(String message)
         {
             Console.WriteLine(message);
         }

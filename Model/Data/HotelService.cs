@@ -1,7 +1,7 @@
 ﻿namespace HotelCalcApp.Model.Data
 {
     /// <summary>Сервис отеля</summary>
-    public class HotelService
+    public class HotelService : BaseObjectOfDatabase
     {
         private String _HotelServiceName = String.Empty;
         private List<HotelServicePrice> _HotelServicePricesList = new List<HotelServicePrice> { };
@@ -12,27 +12,15 @@
         /// <summary>Название сервиса отеля</summary>
         public String HotelServiceName
         {
-            get
-            {
-                return _HotelServiceName;
-            }
-            set
-            {
-                _HotelServiceName = value;
-            }
+            get { return _HotelServiceName; }
+            set { _HotelServiceName = value; }
         }
 
         /// <summary>Расценки сервиса отеля</summary>
         public List<HotelServicePrice> HotelServicePricesList
         {
-            get
-            {
-                return _HotelServicePricesList;
-            }
-            set
-            {
-                _HotelServicePricesList = value;
-            }
+            get { return _HotelServicePricesList; }
+            set { _HotelServicePricesList = value; }
         }
 
         /// <summary>Ссылка на идентификатор отеля</summary>
@@ -40,12 +28,10 @@
 
         public HotelService()
         {
-            
+
         }
 
-        /// <summary>
-        /// Новый сервис отеля
-        /// </summary>
+        /// <summary> Новый сервис отеля</summary>
         /// <param name="nameService">Название сервиса</param>
         /// <param name="hotelServicePricesList">Список цен сервиса отеля</param>
         public HotelService(String hotelServiceName, List<HotelServicePrice> hotelServicePricesList)
