@@ -1,4 +1,5 @@
-﻿using HotelCalcApp.Model.Services.Database;
+﻿using HotelCalcApp.Controller.Menu;
+using HotelCalcApp.Model.Services.Database;
 using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Model.Menu
@@ -26,11 +27,10 @@ namespace HotelCalcApp.Model.Menu
             Console.ReadKey();
         }
 
-        /// <summary>Переход в Поток главноего(меню) отображения</summary>
         //public void GoToMainMenu()
         //{
-        // private MainMenuModel mainMenuModel = new MainMenuModel();
-        //    mainMenuModel.MainCommandsMenu();
+        //    //MainMenuModel mainMenuModel = new MainMenuModel();
+        //    //mainMenuModel.MainCommandsMenu();
         //}
     }
 }

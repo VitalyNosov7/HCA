@@ -5,13 +5,14 @@ namespace HotelCalcApp.Model.Menu
     public class DataBaseMenuModel : BaseMenuModel
     {
         /// <summary>Основное Меню для работы с Базой Данных</summary>
-        internal  String DATABASE_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
+        internal String DATABASE_VIEW_MENU = "МЕНЮ КОММАНД:\n" +
           "(нажмите соответствующую цифру для перехода)\n" +
           "1.     ДОБАВИТЬ ДАННЫЕ\n" +
           "2.     ПОЛУЧИТЬ ДАННЫЕ\n" +
           "3.     РЕДАКТИРОВАТЬ ДАННЫЕ\n" +
           "4.     УДАЛИТЬ ДАННЫЕ\n" +
           "ESC.   ВЫХОД В ГЛАВНОЕ МЕНЮ ПРОГРАММЫ";
+
 
         private AddingDataToDatabaseMenuController _addingDataToDatabaseMenuController = new AddingDataToDatabaseMenuController();
         public AddingDataToDatabaseMenuController AddingDataToDatabaseMenuControllerProperty
@@ -33,7 +34,7 @@ namespace HotelCalcApp.Model.Menu
             do
             {
                 Console.Clear();
-               
+
                 DisplayMessage(DATABASE_VIEW_MENU);
 
                 btn = Console.ReadKey();
@@ -70,11 +71,11 @@ namespace HotelCalcApp.Model.Menu
         }
 
         //  TODO:   дублирование кода (в классе AddingDataToDatabaseMenuModel)
-        /// <summary>Переход в Поток главноего(меню) отображения</summary>
-        public void GoToMainMenu()
-        {
-            MainMenuModel mainMenuModel = new MainMenuModel();
-            mainMenuModel.MainCommandsMenu();
-        }
+        /// <summary>Переход в Поток главного(меню) отображения</summary>
+        //public void GoToMainMenu()
+        //{
+        //    //MainMenuModel mainMenuModel = new MainMenuModel();
+        //    //mainMenuModel.MainCommandsMenu();
+        //}
     }
 }
