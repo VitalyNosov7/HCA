@@ -1,6 +1,4 @@
-﻿using HotelCalcApp.Controller.Menu;
-
-namespace HotelCalcApp.Model.Menu
+﻿namespace HotelCalcApp.Model.Menu
 {
     public class MainMenuModel : BaseMenuModel
     {
@@ -17,6 +15,34 @@ namespace HotelCalcApp.Model.Menu
         {
             DisplayMessage(START_APP_MESSAGE);
             Console.ReadKey();
+        }
+
+        /// <summary>Главное Меню (вывод на экран)</summary>
+        public void MainCommandsMenu()
+        {
+            do
+            {
+                Console.Clear();
+
+                DisplayMessage(MAIN_VIEW_MENU);
+
+                btn = Console.ReadKey();
+
+                switch (btn.Key)
+                {
+                    case ConsoleKey.D1:
+                        // Вызов контроллера БД (Меню команд для работы с базой данных);
+                        Console.WriteLine(".    Вызов контроллера Базы данных");
+                        return;
+                    case ConsoleKey.D2:
+                        // TODO: тут добавить вызов соответствующего контроллера.
+                        Console.WriteLine(".    Вызов контроллера Сервисов");
+                        return;
+                }
+            }
+            while (!(btn.Key == ConsoleKey.Escape));
+            Console.Clear();
+            StopApp();
         }
     }
 }

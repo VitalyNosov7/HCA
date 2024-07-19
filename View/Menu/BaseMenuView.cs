@@ -1,8 +1,6 @@
-﻿using HotelCalcApp.Interfaces;
-
-namespace HotelCalcApp.View.Menu
+﻿namespace HotelCalcApp.View.Menu
 {
-    public abstract class BaseMenuView : IMessageTransferBuffer
+    public abstract class BaseMenuView
     {
         public void MessageOutput(String message)
         {

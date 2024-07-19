@@ -1,4 +1,5 @@
 ﻿using HotelCalcApp.Model.Menu;
+using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Controller.Menu
 {
@@ -10,6 +11,14 @@ namespace HotelCalcApp.Controller.Menu
         {
             get { return _AddingDataToDatabaseMenuModel; }
             set { _AddingDataToDatabaseMenuModel = value;}
+        }
+
+        /// <summary>Отображение пунктов Меню для добавления данных в базу данных</summary>
+        private AddingDataToDatabaseMenuView _AddingDataToDatabaseMenuView = new AddingDataToDatabaseMenuView();
+        public AddingDataToDatabaseMenuView AddingDataToDatabaseMenuView
+        {
+            get { return _AddingDataToDatabaseMenuView; }
+            set { _AddingDataToDatabaseMenuView = value; }
         }
     }
 }

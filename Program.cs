@@ -6,10 +6,9 @@ namespace HotelCalcApp
     {
         static void Main()
         {
-            //  TODO:   Вынести в отдельный класс - инициализация!
-            MainMenuController mainMenuController = new MainMenuController();
-            mainMenuController.MainMenuModelProperty.StartApp();
-            mainMenuController.MainMenuModelProperty.MainCommandsMenu();
+            MenuControlController menuControlController = new MenuControlController();
+            menuControlController.MenuControlModelProperty.MainMenuControllerProperty.MainMenuModelProperty.StartApp();
+            menuControlController.MenuControlModelProperty.MainMenuControllerProperty.MainMenuModelProperty.MainCommandsMenu();
         }
     }
 }

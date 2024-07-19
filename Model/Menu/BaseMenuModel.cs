@@ -1,5 +1,4 @@
-﻿using HotelCalcApp.Controller.Menu;
-using HotelCalcApp.Model.Services.Database;
+﻿using HotelCalcApp.Model.Services.Database;
 using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Model.Menu
@@ -26,11 +25,5 @@ namespace HotelCalcApp.Model.Menu
             DisplayMessage(STOP_APP_MESSAGE);
             Console.ReadKey();
         }
-
-        //public void GoToMainMenu()
-        //{
-        //    //MainMenuModel mainMenuModel = new MainMenuModel();
-        //    //mainMenuModel.MainCommandsMenu();
-        //}
     }
 }

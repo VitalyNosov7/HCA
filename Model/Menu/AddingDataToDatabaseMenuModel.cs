@@ -1,5 +1,4 @@
 ﻿using HotelCalcApp.Model.Services.Database;
-using HotelCalcApp.View.Menu;
 
 namespace HotelCalcApp.Model.Menu
 {
@@ -13,14 +12,6 @@ namespace HotelCalcApp.Model.Menu
             "5.     СТОП-ПРОДАЖИ\n" +
             "6.     ВЫЙТИ В МЕНЮ БАЗА ДАННЫХ\n" +
             "ESC.   ВЫЙТИ ИЗ ПРОГРАММЫ\n";
-
-        /// <summary>Отображение пунктов Меню для добавления данных в базу данных</summary>
-        private AddingDataToDatabaseMenuView _AddingDataToDatabaseMenuView = new AddingDataToDatabaseMenuView();
-        public AddingDataToDatabaseMenuView AddingDataToDatabaseMenuView
-        {
-            get { return _AddingDataToDatabaseMenuView; }
-            set { _AddingDataToDatabaseMenuView = value; }
-        }
 
         private AddingDataFromDatabase _addingDataFromDatabase = new AddingDataFromDatabase();
         internal AddingDataFromDatabase AddingDataFromDatabaseProperty
@@ -72,7 +63,7 @@ namespace HotelCalcApp.Model.Menu
             }
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
-            // GoToMainMenu();
+            //  TODO:   Реализовать переход в главное меню!( GoToMainMenu();)
         }
 
         /// <summary>Ввод данных пользователем</summary>

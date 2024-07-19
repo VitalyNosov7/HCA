@@ -13,21 +13,6 @@ namespace HotelCalcApp.Model.Menu
           "4.     УДАЛИТЬ ДАННЫЕ\n" +
           "ESC.   ВЫХОД В ГЛАВНОЕ МЕНЮ ПРОГРАММЫ";
 
-
-        private AddingDataToDatabaseMenuController _addingDataToDatabaseMenuController = new AddingDataToDatabaseMenuController();
-        public AddingDataToDatabaseMenuController AddingDataToDatabaseMenuControllerProperty
-        {
-            get { return _addingDataToDatabaseMenuController; }
-            set { _addingDataToDatabaseMenuController = value; }
-        }
-
-        private DataExtractionMenuController _dataExtractionMenuController = new DataExtractionMenuController();
-        public DataExtractionMenuController DataExtractionMenuControllerProperty
-        {
-            get { return _dataExtractionMenuController; }
-            set { _dataExtractionMenuController = value; }
-        }
-
         /// <summary>Поток  Отображения меню работы с базой данных</summary>
         public void DatabaseCommandsMenu()
         {
@@ -44,16 +29,10 @@ namespace HotelCalcApp.Model.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
-                        AddingDataToDatabaseMenuControllerProperty
-                            .AddingDataToDatabaseMenuModel
-                            .ShowItemsMenuForAddingDataToDatabase();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ЧТЕНИЯ ДАННЫХ");
-                        DataExtractionMenuControllerProperty
-                            .DataExtractionMenuModel
-                            .ShowItemsMenuForExtractingDataFromTheDatabase();
                         return;
                     case ConsoleKey.D3:
                         // TODO: тут добавить вызов соответствующего контроллера.
@@ -67,15 +46,7 @@ namespace HotelCalcApp.Model.Menu
             }
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
-            GoToMainMenu();
+           //  TODO:   Реализовать переход в главное меню!( GoToMainMenu();)
         }
-
-        //  TODO:   дублирование кода (в классе AddingDataToDatabaseMenuModel)
-        /// <summary>Переход в Поток главного(меню) отображения</summary>
-        //public void GoToMainMenu()
-        //{
-        //    //MainMenuModel mainMenuModel = new MainMenuModel();
-        //    //mainMenuModel.MainCommandsMenu();
-        //}
     }
 }

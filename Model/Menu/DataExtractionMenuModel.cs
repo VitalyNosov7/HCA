@@ -17,13 +17,6 @@ namespace HotelCalcApp.Model.Menu
 
         internal String MESSAGE_IS_A_LIST_OF_HOTELS = "Список отелей:";
 
-        private DataExtractionMenuView _DataExtractionMenuView = new DataExtractionMenuView();
-        public DataExtractionMenuView DataExtractionMenuView
-        {
-            get { return _DataExtractionMenuView; }
-            set { _DataExtractionMenuView = value; }
-        }
-
         //  TODO:   Переработать метод вывода элементов БД. Подумать как можно обобщить, чтобы метод стал универсальным!
         void ShowHotels()
         {
@@ -63,7 +56,7 @@ namespace HotelCalcApp.Model.Menu
             }
             while (!(btn.Key == ConsoleKey.Escape));
             Console.Clear();
-            // GoToMainMenu();
+            //  TODO:   Реализовать переход в главное меню!( GoToMainMenu();)
         }
     }
 }
