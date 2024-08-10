@@ -13,6 +13,8 @@ namespace HotelCalcApp.Model.Menu
           "4.     УДАЛИТЬ ДАННЫЕ\n" +
           "ESC.   ВЫХОД В ГЛАВНОЕ МЕНЮ ПРОГРАММЫ";
 
+        public event CallingMenuItem OnCallingMenuItem;
+
         /// <summary>Поток  Отображения меню работы с базой данных</summary>
         public void DatabaseCommandsMenu()
         {
@@ -29,6 +31,7 @@ namespace HotelCalcApp.Model.Menu
                     case ConsoleKey.D1:
                         // TODO: тут добавить вызов соответствующего контроллера.
                         Console.WriteLine(".    Вызов контроллера ДОБАВИТЬ ДАННЫЕ");
+                        OnCallingMenuItem();
                         return;
                     case ConsoleKey.D2:
                         // TODO: тут добавить вызов соответствующего контроллера.

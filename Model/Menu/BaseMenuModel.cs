@@ -5,6 +5,10 @@ namespace HotelCalcApp.Model.Menu
 {
     public abstract class BaseMenuModel
     {
+        public delegate void CallingMenuItem();
+
+        //public event CallingMenuItem? OnCallingMenuItem;
+
         private const String STOP_APP_MESSAGE = "_Выход из программы";
 
         private GettingDataFromDatabase _gettingDataFromDatabase = new GettingDataFromDatabase();
