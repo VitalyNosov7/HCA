@@ -5,6 +5,7 @@ namespace HotelCalcApp.Controller.Menu
 {
     public class MenuControlController
     {
+
         private MenuControlModel _menuControlModel = new MenuControlModel();
         public MenuControlModel MenuControlModelProperty
         {

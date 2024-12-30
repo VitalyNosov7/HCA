@@ -4,6 +4,8 @@ namespace HotelCalcApp.Model.Menu
 {
     public class MenuControlModel
     {
+        delegate void ShowMenu();
+
         private MainMenuController _mainMenuController = new MainMenuController();
         public MainMenuController MainMenuControllerProperty
         {
